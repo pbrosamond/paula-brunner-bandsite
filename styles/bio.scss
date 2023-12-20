@@ -1,0 +1,42 @@
+@use '../styles/partials/_variables.scss' as *;
+@use '../styles/partials/_mixins.scss' as *;
+
+/* Bio SCSS linked to index html files */
+
+// Global
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; /* Default font-size 16px */
+}
+
+body {
+    margin: 0; /* Removes white page border */
+}
+
+// Classes
+
+.header {
+    @include flexbox (column);
+    @include alignment (flex-end, 0, 0, center);
+    @include spacing (0, 2rem);
+    background-color: $color-black;
+
+    &__title {
+        @include h1 ($regular, $color-white, uppercase);
+    }
+
+    &__nav {
+        @include flexbox;
+        @include alignment (bottom,bottom,bottom,bottom);
+
+        &--link {
+            @include h3 ($regular, $color-white, capitalize);
+        }
+    }
+}
+
+
