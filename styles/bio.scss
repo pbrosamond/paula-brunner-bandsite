@@ -14,6 +14,7 @@ html {
 
 body {
     @include margin; // Removes white page border
+    font-family: $font-family; // Sets default font to Avenir or Sans-Serif
 }
 
 p {
@@ -22,20 +23,52 @@ p {
 
 // Start of Header Classes
 .header {
+
+    // Start of Responsiveness
+    @include tablet {
+        @include flexbox ($gap: 2rem);
+        @include padding (0rem, 1rem, 0rem, 2rem);
+    }
+
+    @include desktop {
+        @include flexbox;
+        @include padding (0rem, 1rem, 0rem, 2rem);
+    }
+    // End of Responsiveness
+
     @include flexbox (column, nowrap, 0.3rem);
     @include alignment ($align-items: center);
     @include padding (0.6rem, 0, 0, 0);
     background-color: $color-black;
 
-    &__title {
+    &__logo {
         @include h1 ($regular, $color-white);
     }
 
     &__nav {
+
         @include flexbox;
         width: 100%;
 
         &--link {
+
+            // Start of Responsiveness
+            @include tablet {
+                @include flexbox;
+                @include alignment (center);
+                @include padding ;
+                width: 14vw;
+
+            }
+        
+            @include desktop {
+                @include flexbox;
+                @include alignment (center);
+                @include padding;
+                width: 14vw;
+            }
+            // End of Responsiveness
+
             @include h3 ($regular, $color-white);
             @include alignment ($text-align: center);
             @include padding (0, 0, 0.8rem, 0);
@@ -107,13 +140,12 @@ p {
     }
 }
 
-// Start of Section 3: Album Classes
-
+// Start of Footer Classes
 .footer {
     background-color: $color-black;
     @include flexbox (column, $gap: 1rem);
     @include padding (1rem, 1rem, 1rem, 1rem);
-
+    
     &__title {
         @include h1 ($demi, $color-white);
         @include margin;
@@ -122,8 +154,33 @@ p {
     &__icons {
         @include flexbox ($gap: 2rem);
     }
-}
 
+    &__details {
+        @include flexbox (column, $gap: 1.5rem);
+    }
+
+    &__contact {
+        @include flexbox (column, $gap: 0.8rem);
+        @include p ($regular, $color-white);
+    }
+
+    &__person {
+        font-weight: $demi;
+    }
+
+    &__email {
+        @include p ($regular, $color-white);
+    }
+
+    &__logo {
+        @include h1 ($regular, $color-white);
+        @include padding (3rem);
+    }
+
+    &__copyright {
+        @include p ($regular, $color-white);
+    }
+}
 
 
 
