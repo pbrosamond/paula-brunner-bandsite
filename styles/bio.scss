@@ -27,12 +27,12 @@ p {
     // Start of Responsiveness
     @include tablet {
         @include flexbox ($gap: 2rem);
-        @include padding (0rem, 1rem, 0rem, 2rem);
+        @include padding (0, 0, 0, 2rem);
     }
 
     @include desktop {
-        @include flexbox;
-        @include padding (0rem, 1rem, 0rem, 2rem);
+        @include flexbox ($gap: 2rem);
+        @include padding (0, 0, 0, 2rem);
     }
     // End of Responsiveness
 
@@ -56,7 +56,7 @@ p {
             @include tablet {
                 @include flexbox;
                 @include alignment (center);
-                @include padding ;
+                @include padding (2rem,0,2rem,0);
                 width: 14vw;
 
             }
@@ -84,12 +84,42 @@ p {
 
 // Start of Section 1: Hero Classes
 .hero {
+
+    // Start of Responsiveness
+    @include tablet {
+        @include padding (0, 0, 0, 2rem);
+        height: 26rem;
+    }
+
+    @include desktop {
+        @include padding (0, 0, 0, 2rem);
+        height: 26rem;
+    }
+    // End of Responsiveness
+
+    position: relative;
     @include background-image (url(../assets/images/hero-bio.jpg));
     @include flexbox;
     @include alignment ($align-items: center);
     @include padding (0, 0, 0, 1rem);
 
+    &::after {
+        @include overlay;
+    }
+
     &__title {
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 4rem
+        }
+
+        @include desktop {
+            font-size: 4rem
+        }
+        // End of Responsiveness
+
+        z-index: 1;
         @include margin;
         @include h1 ($demi, $color-white);
     }
@@ -97,56 +127,253 @@ p {
 
 // Start of Section 2: Info Classes
 .info {
+
+    // Start of Responsiveness
+    @include tablet {
+        @include flexbox (column, $gap: 1.8rem);
+        @include padding (3rem, 0, 0, 2rem);
+    }
+
+    @include desktop {
+        @include flexbox (column, $gap: 1.8rem);
+        @include padding (3rem, 0, 0, 2rem);
+    }
+    // End of Responsiveness
+
     background-color: $color-white;
     @include flexbox (column, $gap: 1rem);
     @include padding (1rem, 1rem, 1rem, 1rem);
 
     &__title {
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 2.5rem;
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+        }
+        // End of Responsiveness
+
         @include h1 ($demi, $color-black);
         @include margin;
     }
 
+    &__image {
+
+        // Start of Responsiveness
+        @include tablet {
+            height: 20rem; // TODO Fix Image positioning
+            object-fit: cover;
+            @include margin (0,4rem,0,4rem);
+        }
+
+        @include desktop {
+            height: 20rem; // TODO Fix Image positioning
+            object-fit: cover;
+            @include margin (0,4rem,0,4rem);
+        }
+        // End of Responsiveness
+
+        @include margin;
+        height: 9rem; // TODO Fix Image positioning
+        object-fit: cover;
+    }
+
     &__quote {
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            @include margin (0,4rem,0,4rem);
+        }
+
+        @include desktop {
+            font-size: 1.4rem;
+            line-height: 2rem;
+            @include margin (0,4rem,0,4rem);
+        }
+        // End of Responsiveness
+
         @include h3 ($demi, $color-darkblack);
         @include margin;
         @include flexbox (column, $gap: 0.3rem);
+
+        &--name {
+            // Start of Responsiveness
+            @include tablet {
+                font-size: 1rem;
+                line-height: 2rem;
+            }
+
+            @include desktop {
+                font-size: 1rem;
+                line-height: 2rem;
+            }
+            // End of Responsiveness
+        }
     }
 
     &__text {
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 1.6rem;
+            line-height: 2rem;
+            @include margin (0,4rem,2rem,4rem);
+        }
+
+        @include desktop {
+            font-size: 1.6rem;
+            line-height: 2rem;
+            @include margin (0,4rem,0,4rem);
+        }
+        // End of Responsiveness
+
         @include p ($regular, $color-black);
         @include margin;
         @include flexbox (column, $gap: 0.8rem);
+        
 
         &--title {
+
+            // Start of Responsiveness
+            @include tablet {
+                @include margin (1rem,0,1rem,0);
+                font-weight: $demi;
+                font-size: 1.6rem;
+                line-height: 2rem;
+            }
+
+            @include desktop {
+                @include margin (1rem,0,1rem,0);
+                font-weight: $demi;
+                font-size: 1.6rem;
+                line-height: 2rem;
+            }
+            // End of Responsiveness
+
             @include h3 ($regular, $color-darkblack);
         }
+    }
+
+    &__paragraph {
+        
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+            @include flexbox ($gap: 2rem);
+        }
+
+        @include desktop {
+            font-size: 0.9rem;
+            line-height: 1.5rem;
+            @include flexbox ($gap: 2rem);
+        }
+        // End of Responsiveness
     }
 }
 
 // Start of Section 3: Album Classes
 .gallery {
+
     background-color: $color-mercury;
     @include flexbox (column, $gap: 1rem);
     @include padding (1rem, 1rem, 1rem, 1rem);
 
     &__title {
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 2.5rem;
+            @include padding (3rem, 0, 0, 2rem);
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+            @include padding (3rem, 0, 0, 2rem);
+        }
+        // End of Responsiveness
+
         @include h1 ($demi, $color-black);
         @include margin;
     }
 
     &__figures {
+
+        // Start of Responsiveness
+        @include tablet {
+            @include flexbox (row, wrap, $gap: 1.8rem);
+            @include padding (2rem, 0, 1.5rem);
+            @include alignment (center);
+        }
+    
+        @include desktop {
+            @include flexbox (row, wrap, $gap: 1.8rem);
+            @include padding (2rem, 0, 1.5rem);
+            @include alignment (center);
+        }
+        // End of Responsiveness
+
         @include flexbox (column, $gap: 1rem);
         @include margin;
+
+        &--images {
+            
+             // Start of Responsiveness
+            @include tablet {
+                height: 7.1rem;
+            }
+    
+            @include desktop {
+                height: 7.1rem;
+            }   
+            // End of Responsiveness
+
+            filter: grayscale(100%); // Apply grayscale effect by default
+            transition: filter 0.3s ease; // Add transition for a smooth effect
+
+            &:hover {
+                filter: grayscale(0%); // Remove grayscale effect on hover, returning to color
+            }
+        }
     }
 }
 
 // Start of Footer Classes
 .footer {
+
+    // Start of Responsiveness
+    @include tablet {
+        @include flexbox (column, $gap: 2rem);
+        @include padding (3rem, 0, 0, 4rem);
+    }
+
+    @include desktop {
+        @include flexbox (column, $gap: 2rem);
+        @include padding (3rem, 0, 0, 4rem);
+    }
+    // End of Responsiveness
+    
     background-color: $color-black;
     @include flexbox (column, $gap: 1rem);
     @include padding (1rem, 1rem, 1rem, 1rem);
     
     &__title {
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 2.5rem;
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+        }
+        // End of Responsiveness
+
         @include h1 ($demi, $color-white);
         @include margin;
     }
@@ -160,6 +387,7 @@ p {
     }
 
     &__contact {
+
         @include flexbox (column, $gap: 0.8rem);
         @include p ($regular, $color-white);
     }
