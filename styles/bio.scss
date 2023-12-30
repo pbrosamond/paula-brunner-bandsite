@@ -46,8 +46,14 @@ body {
     }
 
     &__nav {
-        @include flexbox ($gap: 3rem);
+        @include flexbox;
         width: 100%;
+
+        // Start of Responsiveness
+        @include tablet {
+            gap: 3rem;
+        }
+        // End of Responsiveness
     }
 
     &__link {
@@ -70,7 +76,7 @@ body {
 
         // Start of Responsiveness
         @include tablet {
-            width: fit-content;
+            width: 4.5rem;
         }
         // End of Responsiveness
         }
@@ -280,7 +286,6 @@ body {
         // Start of Responsiveness
         @include tablet {
             height: 1.5625rem;
-            
         }
         // End of Responsiveness
         }
