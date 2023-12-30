@@ -14,19 +14,6 @@
     }
 }
 
-// Overlay
-
-@mixin overlay {
-    content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: $color-black;
-  opacity: 0.5; /* Adjust the opacity as needed (0.0 to 1.0) */
-}
-
 // Display Flex
 @mixin flexbox ($direction: row, $wrap: nowrap, $gap: 0) {
     display: flex;
@@ -35,28 +22,16 @@
     gap: $gap;
 }
 
-// Margins and Padding
-@mixin margin ($margin-top: 0, $margin-right: 0, $margin-bottom: 0, $margin-left: 0) {
-    margin-top: $margin-top;
-    margin-right: $margin-right;
-    margin-bottom: $margin-bottom;
-    margin-left: $margin-left;
-}
-
-// Padding
-@mixin padding ($padding-top: 0, $padding-right: 0, $padding-bottom: 0, $padding-left: 0) {
-    padding-top: $padding-top;
-    padding-right: $padding-right;
-    padding-bottom: $padding-bottom;
-    padding-left: $padding-left;
-}
-
-// Content and Text Alignment
-@mixin alignment ($justify-content: left, $align-content: left, $text-align: left,$align-items: left) {
-    justify-content: $justify-content;
-    align-content: $align-content;
-    text-align: $text-align;
-    align-items: $align-items;
+// Overlay
+@mixin overlay {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $color-black;
+    opacity: 0.5; // Adjust the opacity as needed (0.0 to 1.0)
 }
 
 // Background Image
@@ -64,14 +39,8 @@
     background-image: $background-image;
     background-position: center;
     background-size: cover;
-    height: 12rem;
-}
-
-// Buttons
-@mixin button {
-    height: 40px;
-    width: 9.375rem;
-    border-radius: 4px;
+    height: 50vw;
+    max-height: 80vh;
 }
 
 // Fonts
@@ -81,7 +50,6 @@
     line-height: 2rem;
     text-decoration: none;
     color: $font-color;
-    // font-style: normal;
 }
 
 @mixin h2 ($font-weight, $font-color) {
@@ -90,7 +58,6 @@
     line-height: 2rem;
     text-decoration: none;
     color: $font-color;
-    // font-style: normal;
 }
 
 @mixin h3 ($font-weight, $font-color) {
@@ -99,25 +66,22 @@
     line-height: 1.375rem;
     text-decoration: none;
     color: $font-color;
-    // font-style: normal;
 }
 
 @mixin p ($font-weight, $font-color) {
-    font-size: 0.813rem;
-    font-weight: $font-weight;
-    line-height: 1.2rem;
-    text-decoration: none;
-    color: $font-color;
-    // font-style: normal;
-}
-
-@mixin h4 ($font-weight, $font-color) {
-    font-size: 0.813rem;
+    font-size: 0.8125rem;
     font-weight: $font-weight;
     line-height: 1.125rem;
     text-decoration: none;
     color: $font-color;
-    // font-style: normal;
+}
+
+@mixin h4 ($font-weight, $font-color) {
+    font-size: 0.8125rem;
+    font-weight: $font-weight;
+    line-height: 1.125rem;
+    text-decoration: none;
+    color: $font-color;
 }
 
 @mixin h5 ($font-weight, $font-color) {
@@ -126,5 +90,4 @@
     line-height: 1.25rem;
     text-decoration: none;
     color: $font-color;
-    // font-style: normal;
 }

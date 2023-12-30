@@ -13,326 +13,209 @@ html {
 }
 
 body {
-    @include margin; // Removes white page border
+    margin: 0; // Removes white border of entire website
     font-family: $font-family; // Sets default font to Avenir or Sans-Serif
 }
 
-p {
-    @include margin;
-}
-
-img {
-    max-width: 100%;
-}
-
-// Start of Header Classes
+// Header Classes
 .header {
+    @include flexbox (column, $gap: 1rem);
+    
+    background-color: $color-black;
+    align-items: center;
+    padding: 1.5rem 0 0;
 
     // Start of Responsiveness
     @include tablet {
-        @include flexbox ($gap: 2rem);
-        @include padding (0, 0, 0, 2rem);
+        @include flexbox (row, $gap: 4rem);
+        padding-left: 2rem;
+        padding-right: 2rem;    
     }
     // End of Responsiveness
-
-    @include desktop {
-        @include flexbox ($gap: 2rem);
-        @include padding (0, 0, 0, 2rem);
-    }
-    // End of Responsiveness
-
-    @include flexbox (column, nowrap, 0.8rem);
-    @include alignment ($align-items: center);
-    @include padding (1rem, 0, 0, 0);
-    background-color: $color-black;
 
     &__logo {
-        @include h1 ($regular, $color-white);
-        height: 1.3rem
+        @include flexbox;
+        height: 2rem;
+        max-height: 1.25rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            margin-bottom: 1rem;
+        }
+        // End of Responsiveness
     }
 
     &__nav {
-
-        @include flexbox;
+        @include flexbox ($gap: 3rem);
         width: 100%;
     }
 
     &__link {
-
+        @include h3 ($regular, $color-mercury);
         border-bottom: 3px solid $color-black;
-        // Start of Responsiveness
-        @include tablet {
-            @include flexbox;
-            @include alignment (center);
-            @include padding (2rem,0,2rem,0);
-            width: 14vw;
-        }
-        // End of Responsiveness
+        padding-bottom: 1rem;
+        text-align: center;
+        width: 50%;
 
-        @include h3 ($regular, $color-white);
-        @include alignment ($text-align: center);
-        @include padding (0, 0, 0.8rem, 0);
-        width: 50vw;
-        
+        &--active {
+            color: $color-white;
+            border-bottom: 3px solid $color-white;
+        }
+
         &:hover {
             font-weight: $bold;
-            border-bottom: 3px solid $color-mercury;
+            color: $color-white;
+            border-bottom: 3px solid $color-white;
         }
-    }
+
+        // Start of Responsiveness
+        @include tablet {
+            width: fit-content;
+        }
+        // End of Responsiveness
+        }
 }
 
-// Start of Section 1: Hero Classes
+// Section 1: Hero Classes
 .hero {
+    @include flexbox;
+    @include h1 ($demi, $color-white);
+    @include background-image (url(../assets/images/hero-bio.jpg));
+    position: relative;
+    align-items: center;
+    padding: 1rem;
 
     // Start of Responsiveness
     @include tablet {
-        @include padding (0, 0, 0, 2rem);
-        height: 26rem;
-    }
-
-    @include desktop {
-        @include padding (0, 0, 0, 2rem);
-        height: 26rem;
+        padding: 3rem 2rem 2.25rem;
     }
     // End of Responsiveness
-
-    position: relative;
-    @include background-image (url(../assets/images/hero-bio.jpg));
-    @include flexbox;
-    @include alignment ($align-items: center);
-    @include padding (0, 0, 0, 1rem);
+    
 
     &::after {
         @include overlay;
     }
-
+    
     &__title {
+        @include h1 ($demi, $color-white);
+        margin: 0;
+        z-index: 1;
 
         // Start of Responsiveness
         @include tablet {
-            font-size: 4rem
-        }
-
-        @include desktop {
-            font-size: 4rem
+            font-size: 3.75rem;
+            line-height: 4.25rem;
         }
         // End of Responsiveness
-
-        z-index: 1;
-        @include margin;
-        @include h1 ($demi, $color-white);
     }
 }
 
-// Start of Section 2: Info Classes
-.info {
+// Section 2: About Classes
+.about {
+    @include flexbox (column, $gap: 1rem);
+    background-color: $color-white;
+    padding: 1.5rem 1rem 1rem;
 
     // Start of Responsiveness
     @include tablet {
-        @include flexbox (column, $gap: 1.8rem);
-        @include padding (3rem, 3rem, 0, 2rem);
-    }
-
-    @include desktop {
-        @include flexbox (column, $gap: 1.8rem);
-        @include padding (3rem, 3rem, 0, 2rem);
+        padding: 3rem 2rem 2.25rem;
     }
     // End of Responsiveness
 
-    
-    @include flexbox (column, $gap: 1rem);
-    @include padding (1rem, 1rem, 1rem, 1rem);
-
     &__title {
-
-        // Start of Responsiveness
-        @include tablet {
-            font-size: 2.5rem;
-        }
-
-        @include desktop {
-            font-size: 2.5rem;
-        }
-        // End of Responsiveness
-
         @include h1 ($demi, $color-black);
-        @include margin;
-    }
-
-    &__image {
+        margin: 0;
 
         // Start of Responsiveness
         @include tablet {
-            height: 20rem; // TODO Fix Image positioning
-            object-fit: cover;
-            @include margin (0,4rem,0,4rem);
-        }
-
-        @include desktop {
-            height: 20rem; // TODO Fix Image positioning
-            object-fit: cover;
-            @include margin (0,4rem,0,4rem);
+            font-size: 2.25rem;
+            line-height: 2.75rem;
         }
         // End of Responsiveness
+    }
 
-        @include margin;
-        height: 9rem; // TODO Fix Image positioning
+    &__content {
+        margin: auto;
+        max-width: 60vh;
+
+        // Start of Responsiveness
+        @include tablet {
+            @include flexbox (column, $gap: 2rem);
+            width: 60vh;
+        }
+        // End of Responsiveness
+    }
+
+    &__img {
         object-fit: cover;
+        width: 100%;
     }
 
-    &__quote {
-
-        // Start of Responsiveness
-        @include tablet {
-            font-size: 1.4rem;
-            line-height: 2rem;
-            @include margin (0,4rem,0,4rem);
-        }
-
-        @include desktop {
-            font-size: 1.4rem;
-            line-height: 2rem;
-            @include margin (0,4rem,0,4rem);
-        }
-        // End of Responsiveness
-
+    &__article {
+        @include flexbox (column, $gap: 1rem);
         @include h3 ($demi, $color-darkblack);
-        @include margin;
-        @include flexbox (column, $gap: 0.3rem);
-
-        &--name {
-            // Start of Responsiveness
-            @include tablet {
-                font-size: 1rem;
-                line-height: 2rem;
-            }
-
-            @include desktop {
-                font-size: 1rem;
-                line-height: 2rem;
-            }
-            // End of Responsiveness
-        }
-    }
-
-    &__text {
-
-        // Start of Responsiveness
-        @include tablet {
-            font-size: 1.6rem;
-            line-height: 2rem;
-            @include margin (0,4rem,2rem,4rem);
-        }
-
-        @include desktop {
-            font-size: 1.6rem;
-            line-height: 2rem;
-            @include margin (0,4rem,0,4rem);
-        }
-        // End of Responsiveness
-
-        @include p ($regular, $color-black);
-        @include margin;
-        @include flexbox (column, $gap: 0.8rem);
-        
+        margin: 0;
 
         &--title {
+            margin: 0;
+        }
 
-            // Start of Responsiveness
-            @include tablet {
-                @include margin (1rem,0,1rem,0);
-                font-weight: $demi;
-                font-size: 1.6rem;
-                line-height: 2rem;
-            }
-
-            @include desktop {
-                @include margin (1rem,0,1rem,0);
-                font-weight: $demi;
-                font-size: 1.6rem;
-                line-height: 2rem;
-            }
-            // End of Responsiveness
-
-            @include h3 ($regular, $color-darkblack);
+        &--quote {
+            margin: 0;
         }
     }
 
-    &__paragraph {
-        
+    &__paragraphs {
+        @include flexbox (column, $gap: 1rem);
+
         // Start of Responsiveness
         @include tablet {
-            font-size: 0.8rem;
-            line-height: 1.2rem;
-            @include flexbox ($gap: 2rem);
-        }
-
-        @include desktop {
-            font-size: 0.8rem;
-            line-height: 1.2rem;
-            @include flexbox ($gap: 2rem);
+        @include flexbox (row, $gap: 3rem);
         }
         // End of Responsiveness
+        
+        &--text {
+            margin: 0;
+        }
     }
 }
 
-// Start of Section 3: Album Classes
+// Section 3: Gallery Classes
 .gallery {
-
-    background-color: $color-alabaster;
     @include flexbox (column, $gap: 1rem);
-    @include padding (1rem, 2rem, 1rem, 2rem);
+    background-color: $color-alabaster;
+    padding: 1.5rem 1rem 1rem;
+
+    // Start of Responsiveness
+    @include tablet {
+        padding: 3rem 2rem 2.25rem;
+    }
+    // End of Responsiveness
 
     &__title {
+        @include h1 ($demi, $color-black);
+        margin: 0;
 
         // Start of Responsiveness
         @include tablet {
-            font-size: 2.5rem;
-            // @include padding (3rem, 0, 0, 0);
-        }
-
-        @include desktop {
-            font-size: 2.5rem;
-            // @include padding (3rem, 0, 0, 2rem);
+            font-size: 2.25rem;
+            line-height: 2.75rem;
         }
         // End of Responsiveness
-
-        @include h1 ($demi, $color-black);
-        @include margin;
     }
 
     &__figures {
-
-        @include flexbox (column, $gap: 0);
-        @include margin;
+        @include flexbox (column, $gap: 1rem);
+        margin: 0;
 
         // Start of Responsiveness
         @include tablet {
-        @include flexbox (row, wrap, $gap: 2rem);
-        @include padding (2rem, 0, 2rem, 0);
-        // justify-content: space-between;
-
-            @include alignment (center);
+            @include flexbox (row, wrap, 2rem);
+            justify-content: center;
         }
-    
-        // @include desktop {
-        //     @include flexbox (row, wrap, $gap: 1.8rem);
-        //     @include padding (2rem, 0, 1.5rem);
-        //     @include alignment (center);
-        // }
         // End of Responsiveness
 
-        &--images {
-            
-             // Start of Responsiveness
-            @include tablet {
-                width: 30%;
-            }
-    
-            @include desktop {
-                width: 30%;
-            }   
-            // End of Responsiveness
+        &--img {
 
             filter: grayscale(100%); // Apply grayscale effect by default
             transition: filter 0.3s ease; // Add transition for a smooth effect
@@ -340,90 +223,129 @@ img {
             &:hover {
                 filter: grayscale(0%); // Remove grayscale effect on hover, returning to color
             }
-        }
+
+            // Start of Responsiveness
+            @include tablet {
+                width: 30%;
+                flex-grow: 1;
+            }
+            // End of Responsiveness
+        }   
     }
 }
 
-// Start of Footer Classes
+// Section 3: Footer Classes
 .footer {
-
-    position: relative;
-    background-color: $color-black;
     @include flexbox (column, $gap: 1rem);
-    @include padding (1rem, 1rem, 1rem, 1rem);
+    background-color: $color-black;
+    padding: 1.5rem 1rem 1rem;
 
     // Start of Responsiveness
     @include tablet {
-        @include flexbox (column, $gap: 2rem);
-        @include padding (3rem, 3rem, 3rem, 4rem);
-    }
-
-    @include desktop {
-        @include flexbox (column, $gap: 2rem);
-        @include padding (3rem, 3rem, 3rem, 4rem);
+        gap: 2.5rem;
+        padding: 3rem 2rem 2.25rem;
+        position: relative;
     }
     // End of Responsiveness
- 
-    &__title {
+
+    &__info {
+        @include flexbox (column, $gap: 1rem);
+        @include h3 ($demi, $color-white);
 
         // Start of Responsiveness
         @include tablet {
-            font-size: 2.5rem;
-        }
-
-        @include desktop {
-            font-size: 2.5rem;
+            @include flexbox (row, $gap: 3rem);
         }
         // End of Responsiveness
-
-        @include h1 ($demi, $color-white);
-        @include margin;
     }
 
-    &__icons {
-        @include flexbox ($gap: 2rem);
+    &__title {
+        margin: 0;
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+        }
+        // End of Responsiveness
     }
 
-    &__details {
-        @include flexbox (column, $gap: 1.5rem);
+    &__social {
+        @include flexbox ($gap: 1rem);
+        align-items: center;
+
+        &--icon {
+            @include flexbox;
+
+        // Start of Responsiveness
+        @include tablet {
+            height: 1.5625rem;
+            
+        }
+        // End of Responsiveness
+        }
     }
 
-    &__contact {
+    &__contacts {
+        @include flexbox (column, $gap: 2rem);
 
-        @include flexbox (column, $gap: 0.8rem);
-        @include p ($regular, $color-white);
+        // Start of Responsiveness
+        @include tablet {
+            @include flexbox (row, $gap: 3rem);
+        }
+        // End of Responsiveness
     }
 
-    &__person {
-        font-weight: $demi;
-    }
+    &__text {
+        @include flexbox (column, $gap: 1rem);
 
-    &__email {
-        @include p ($regular, $color-white);
-    }
+        &--name {
+            @include p ($regular, $color-white);
+            white-space: pre-line;
+            margin: 0;
+        }
+
+        &--address {
+            @include p ($regular, $color-white);
+            white-space: pre-line;
+            margin: 0;
+        }
+
+        &--email {
+            @include p ($regular, $color-white);
+        }
+    }    
 
     &__logo {
-        @include h1 ($regular, $color-white);
-        width: fit-content;
-        padding-top: 1rem;
+        @include flexbox;
+        height: 2rem;
+        max-height: 1.25rem;
+        margin-top: 3rem;
 
         // Start of Responsiveness
         @include tablet {
+            margin: 0;
             position: absolute;
-            top: 2.5rem;
-            right: 4rem;
-        }
-
-        @include desktop {
-            font-size: 2.5rem;
+            top: 3.6875rem;
+            right: 2.25rem;
         }
         // End of Responsiveness
+
     }
 
     &__copyright {
         @include p ($regular, $color-white);
+        margin: 0;
+
+        // Start of Responsiveness
+        @include tablet {
+            position: absolute;
+            bottom: 1rem;
+        }
+        // End of Responsiveness
     }
 }
+
 
 
 
