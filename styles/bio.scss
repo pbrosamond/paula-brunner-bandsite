@@ -21,6 +21,10 @@ p {
     @include margin;
 }
 
+img {
+    max-width: 100%;
+}
+
 // Start of Header Classes
 .header {
 
@@ -29,6 +33,7 @@ p {
         @include flexbox ($gap: 2rem);
         @include padding (0, 0, 0, 2rem);
     }
+    // End of Responsiveness
 
     @include desktop {
         @include flexbox ($gap: 2rem);
@@ -36,48 +41,42 @@ p {
     }
     // End of Responsiveness
 
-    @include flexbox (column, nowrap, 0.3rem);
+    @include flexbox (column, nowrap, 0.8rem);
     @include alignment ($align-items: center);
-    @include padding (0.6rem, 0, 0, 0);
+    @include padding (1rem, 0, 0, 0);
     background-color: $color-black;
 
     &__logo {
         @include h1 ($regular, $color-white);
+        height: 1.3rem
     }
 
     &__nav {
 
         @include flexbox;
         width: 100%;
+    }
 
-        &--link {
+    &__link {
 
-            // Start of Responsiveness
-            @include tablet {
-                @include flexbox;
-                @include alignment (center);
-                @include padding (2rem,0,2rem,0);
-                width: 14vw;
+        border-bottom: 3px solid $color-black;
+        // Start of Responsiveness
+        @include tablet {
+            @include flexbox;
+            @include alignment (center);
+            @include padding (2rem,0,2rem,0);
+            width: 14vw;
+        }
+        // End of Responsiveness
 
-            }
+        @include h3 ($regular, $color-white);
+        @include alignment ($text-align: center);
+        @include padding (0, 0, 0.8rem, 0);
+        width: 50vw;
         
-            @include desktop {
-                @include flexbox;
-                @include alignment (center);
-                @include padding;
-                width: 14vw;
-            }
-            // End of Responsiveness
-
-            @include h3 ($regular, $color-white);
-            @include alignment ($text-align: center);
-            @include padding (0, 0, 0.8rem, 0);
-            width: 50vw;
-            
-            &:hover {
-                font-weight: $bold;
-                border-bottom: 3px solid $color-mercury;
-            }
+        &:hover {
+            font-weight: $bold;
+            border-bottom: 3px solid $color-mercury;
         }
     }
 }
@@ -131,16 +130,16 @@ p {
     // Start of Responsiveness
     @include tablet {
         @include flexbox (column, $gap: 1.8rem);
-        @include padding (3rem, 0, 0, 2rem);
+        @include padding (3rem, 3rem, 0, 2rem);
     }
 
     @include desktop {
         @include flexbox (column, $gap: 1.8rem);
-        @include padding (3rem, 0, 0, 2rem);
+        @include padding (3rem, 3rem, 0, 2rem);
     }
     // End of Responsiveness
 
-    background-color: $color-white;
+    
     @include flexbox (column, $gap: 1rem);
     @include padding (1rem, 1rem, 1rem, 1rem);
 
@@ -263,14 +262,14 @@ p {
         
         // Start of Responsiveness
         @include tablet {
-            font-size: 0.9rem;
-            line-height: 1.5rem;
+            font-size: 0.8rem;
+            line-height: 1.2rem;
             @include flexbox ($gap: 2rem);
         }
 
         @include desktop {
-            font-size: 0.9rem;
-            line-height: 1.5rem;
+            font-size: 0.8rem;
+            line-height: 1.2rem;
             @include flexbox ($gap: 2rem);
         }
         // End of Responsiveness
@@ -280,21 +279,21 @@ p {
 // Start of Section 3: Album Classes
 .gallery {
 
-    background-color: $color-mercury;
+    background-color: $color-alabaster;
     @include flexbox (column, $gap: 1rem);
-    @include padding (1rem, 1rem, 1rem, 1rem);
+    @include padding (1rem, 2rem, 1rem, 2rem);
 
     &__title {
 
         // Start of Responsiveness
         @include tablet {
             font-size: 2.5rem;
-            @include padding (3rem, 0, 0, 2rem);
+            // @include padding (3rem, 0, 0, 0);
         }
 
         @include desktop {
             font-size: 2.5rem;
-            @include padding (3rem, 0, 0, 2rem);
+            // @include padding (3rem, 0, 0, 2rem);
         }
         // End of Responsiveness
 
@@ -304,32 +303,34 @@ p {
 
     &__figures {
 
+        @include flexbox (column, $gap: 0);
+        @include margin;
+
         // Start of Responsiveness
         @include tablet {
-            @include flexbox (row, wrap, $gap: 1.8rem);
-            @include padding (2rem, 0, 1.5rem);
+        @include flexbox (row, wrap, $gap: 2rem);
+        @include padding (2rem, 0, 2rem, 0);
+        // justify-content: space-between;
+
             @include alignment (center);
         }
     
-        @include desktop {
-            @include flexbox (row, wrap, $gap: 1.8rem);
-            @include padding (2rem, 0, 1.5rem);
-            @include alignment (center);
-        }
+        // @include desktop {
+        //     @include flexbox (row, wrap, $gap: 1.8rem);
+        //     @include padding (2rem, 0, 1.5rem);
+        //     @include alignment (center);
+        // }
         // End of Responsiveness
-
-        @include flexbox (column, $gap: 1rem);
-        @include margin;
 
         &--images {
             
              // Start of Responsiveness
             @include tablet {
-                height: 7.1rem;
+                width: 30%;
             }
     
             @include desktop {
-                height: 7.1rem;
+                width: 30%;
             }   
             // End of Responsiveness
 
@@ -346,22 +347,23 @@ p {
 // Start of Footer Classes
 .footer {
 
+    position: relative;
+    background-color: $color-black;
+    @include flexbox (column, $gap: 1rem);
+    @include padding (1rem, 1rem, 1rem, 1rem);
+
     // Start of Responsiveness
     @include tablet {
         @include flexbox (column, $gap: 2rem);
-        @include padding (3rem, 0, 0, 4rem);
+        @include padding (3rem, 3rem, 3rem, 4rem);
     }
 
     @include desktop {
         @include flexbox (column, $gap: 2rem);
-        @include padding (3rem, 0, 0, 4rem);
+        @include padding (3rem, 3rem, 3rem, 4rem);
     }
     // End of Responsiveness
-    
-    background-color: $color-black;
-    @include flexbox (column, $gap: 1rem);
-    @include padding (1rem, 1rem, 1rem, 1rem);
-    
+ 
     &__title {
 
         // Start of Responsiveness
@@ -402,7 +404,20 @@ p {
 
     &__logo {
         @include h1 ($regular, $color-white);
-        @include padding (3rem);
+        width: fit-content;
+        padding-top: 1rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            position: absolute;
+            top: 2.5rem;
+            right: 4rem;
+        }
+
+        @include desktop {
+            font-size: 2.5rem;
+        }
+        // End of Responsiveness
     }
 
     &__copyright {
