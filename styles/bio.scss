@@ -243,7 +243,7 @@ body {
     // Start of Responsiveness
     @include tablet {
         gap: 2.5rem;
-        padding: 3rem 2rem 2.25rem;
+        padding: 3rem 2rem 4rem;
         position: relative;
     }
     // End of Responsiveness
@@ -254,7 +254,7 @@ body {
 
         // Start of Responsiveness
         @include tablet {
-            @include flexbox (row, $gap: 3rem);
+            @include flexbox (row, $gap: 2.5rem);
         }
         // End of Responsiveness
     }
@@ -271,7 +271,7 @@ body {
     }
 
     &__social {
-        @include flexbox ($gap: 1rem);
+        @include flexbox ($gap: 1.5rem);
         align-items: center;
 
         &--icon {
@@ -291,13 +291,14 @@ body {
 
         // Start of Responsiveness
         @include tablet {
-            @include flexbox (row, $gap: 3rem);
+            @include flexbox (row, $gap: 5rem);
         }
         // End of Responsiveness
     }
 
     &__text {
         @include flexbox (column, $gap: 1rem);
+        width: fit-content;
 
         &--name {
             @include p ($regular, $color-white);
@@ -340,7 +341,7 @@ body {
         // Start of Responsiveness
         @include tablet {
             position: absolute;
-            bottom: 1rem;
+            bottom: 3rem;
         }
         // End of Responsiveness
     }
