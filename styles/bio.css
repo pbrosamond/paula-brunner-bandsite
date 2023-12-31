@@ -31,10 +31,10 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  gap: 1rem;
+  gap: 0.7rem;
   background-color: #323232;
   align-items: center;
-  padding: 1.5rem 0 0;
+  padding: 1rem 0 0;
 }
 @media (min-width: 768px) {
   .header {
@@ -44,6 +44,13 @@ body {
     gap: 4rem;
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .header {
+    display: flex;
+    max-width: 120rem;
+    margin: 0 auto;
   }
 }
 .header__logo {
@@ -78,7 +85,7 @@ body {
   text-decoration: none;
   color: #E1E1E1;
   border-bottom: 3px solid #323232;
-  padding-bottom: 1rem;
+  padding-bottom: 0.5rem;
   text-align: center;
   width: 50%;
 }
@@ -110,8 +117,8 @@ body {
   background-image: url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;
-  height: 50vw;
-  max-height: 80vh;
+  height: 60vw;
+  max-height: 100vh;
   position: relative;
   align-items: center;
   padding: 1rem;
@@ -119,6 +126,13 @@ body {
 @media (min-width: 768px) {
   .hero {
     padding: 3rem 2rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    display: flex;
+    max-width: 120rem;
+    margin: 0 auto;
   }
 }
 .hero::after {
@@ -160,6 +174,13 @@ body {
     padding: 3rem 2rem 2.25rem;
   }
 }
+@media (min-width: 1280px) {
+  .about {
+    display: flex;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+}
 .about__title {
   font-size: 1.5rem;
   font-weight: 600;
@@ -174,23 +195,23 @@ body {
     line-height: 2.75rem;
   }
 }
-.about__content {
-  margin: auto;
-  max-width: 60vh;
-}
-@media (min-width: 768px) {
-  .about__content {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    gap: 2rem;
-    width: 60vh;
-  }
-}
 .about__img {
   -o-object-fit: cover;
      object-fit: cover;
-  width: 100%;
+}
+@media (min-width: 768px) {
+  .about__img {
+    display: flex;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  .about__img {
+    display: flex;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
 }
 .about__article {
   display: flex;
@@ -204,8 +225,26 @@ body {
   color: #000000;
   margin: 0;
 }
+@media (min-width: 768px) {
+  .about__article {
+    display: flex;
+    max-width: 40rem;
+    margin: 0 auto;
+  }
+}
+@media (min-width: 1280px) {
+  .about__article {
+    display: flex;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+}
 .about__article--title {
   margin: 0;
+  padding-top: 1rem;
+  font-weight: 400;
+  color: #000000;
+  font-size: 0.9rem;
 }
 .about__article--quote {
   margin: 0;
@@ -226,6 +265,10 @@ body {
 }
 .about__paragraphs--text {
   margin: 0;
+  font-weight: 400;
+  font-size: 0.83rem;
+  line-height: 1.2rem;
+  color: #323232;
 }
 
 .gallery {
@@ -239,6 +282,13 @@ body {
 @media (min-width: 768px) {
   .gallery {
     padding: 3rem 2rem 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .gallery {
+    display: flex;
+    max-width: 120rem;
+    margin: 0 auto;
   }
 }
 .gallery__title {
@@ -300,11 +350,18 @@ body {
     position: relative;
   }
 }
+@media (min-width: 1280px) {
+  .footer {
+    display: flex;
+    max-width: 120rem;
+    margin: 0 auto;
+  }
+}
 .footer__info {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  gap: 1rem;
+  gap: 1.3rem;
   font-size: 0.875rem;
   font-weight: 600;
   line-height: 1.375rem;
@@ -321,6 +378,7 @@ body {
 }
 .footer__title {
   margin: 0;
+  font-weight: 600;
 }
 @media (min-width: 768px) {
   .footer__title {
@@ -350,7 +408,8 @@ body {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  gap: 2rem;
+  gap: 1.5rem;
+  padding-top: 0.8rem;
 }
 @media (min-width: 768px) {
   .footer__contacts {
@@ -370,7 +429,7 @@ body {
 }
 .footer__text--name {
   font-size: 0.8125rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.125rem;
   text-decoration: none;
   color: #FFFFFF;
@@ -400,7 +459,7 @@ body {
   gap: 0;
   height: 2rem;
   max-height: 1.25rem;
-  margin-top: 3rem;
+  margin-top: 2.7rem;
 }
 @media (min-width: 768px) {
   .footer__logo {
@@ -411,9 +470,9 @@ body {
   }
 }
 .footer__copyright {
-  font-size: 0.8125rem;
+  font-size: 0.625rem;
   font-weight: 400;
-  line-height: 1.125rem;
+  line-height: 1.25rem;
   text-decoration: none;
   color: #FFFFFF;
   margin: 0;

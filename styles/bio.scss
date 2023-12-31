@@ -19,17 +19,25 @@ body {
 
 // Header Classes
 .header {
-    @include flexbox (column, $gap: 1rem);
+    @include flexbox (column, $gap: 0.7rem);
     
     background-color: $color-black;
     align-items: center;
-    padding: 1.5rem 0 0;
+    padding: 1rem 0 0;
 
     // Start of Responsiveness
     @include tablet {
         @include flexbox (row, $gap: 4rem);
         padding-left: 2rem;
         padding-right: 2rem;    
+    }
+    // End of Responsiveness
+
+    // Start of Responsiveness
+    @include desktop {
+        display: flex;
+        max-width: 120rem;
+        margin: 0 auto;
     }
     // End of Responsiveness
 
@@ -59,7 +67,7 @@ body {
     &__link {
         @include h3 ($regular, $color-mercury);
         border-bottom: 3px solid $color-black;
-        padding-bottom: 1rem;
+        padding-bottom: 0.5rem;
         text-align: center;
         width: 50%;
 
@@ -96,7 +104,14 @@ body {
         padding: 3rem 2rem 2.25rem;
     }
     // End of Responsiveness
-    
+
+    // Start of Responsiveness
+    @include desktop {
+        display: flex;
+        max-width: 120rem;
+        margin: 0 auto;
+    }
+    // End of Responsiveness
 
     &::after {
         @include overlay;
@@ -128,6 +143,14 @@ body {
     }
     // End of Responsiveness
 
+    // Start of Responsiveness
+    @include desktop {
+        display: flex;
+        max-width: 120rem;
+        margin: 0 auto;
+    }
+    // End of Responsiveness
+
     &__title {
         @include h1 ($demi, $color-black);
         margin: 0;
@@ -140,21 +163,28 @@ body {
         // End of Responsiveness
     }
 
-    &__content {
-        margin: auto;
-        max-width: 60vh;
+    &__img {
+        object-fit: cover; //TODO FIX THIS
+        // height: 60vw;
+        // max-height:80vh;
+        // margin: 0 auto;
 
         // Start of Responsiveness
-        @include tablet {
-            @include flexbox (column, $gap: 2rem);
-            width: 60vh;
+        @include tablet { //TODO FIX THIS
+            display: flex;
+            max-width: 40rem;
+            margin: 0 auto;
         }
         // End of Responsiveness
-    }
 
-    &__img {
-        object-fit: cover;
-        width: 100%;
+         // Start of Responsiveness
+         @include desktop { //TODO FIX THIS
+            display: flex;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+        // End of Responsiveness
+
     }
 
     &__article {
@@ -162,8 +192,28 @@ body {
         @include h3 ($demi, $color-darkblack);
         margin: 0;
 
+        // Start of Responsiveness
+        @include tablet { //TODO FIX THIS
+            display: flex;
+            max-width: 40rem;
+            margin: 0 auto;
+        }
+        // End of Responsiveness
+
+         // Start of Responsiveness
+         @include desktop { //TODO FIX THIS
+            display: flex;
+            max-width: 60rem;
+            margin: 0 auto;
+        }
+        // End of Responsiveness
+
         &--title {
             margin: 0;
+            padding-top: 1rem;
+            font-weight: $regular;
+            color: $color-darkblack;
+            font-size: 0.9rem;
         }
 
         &--quote {
@@ -182,6 +232,10 @@ body {
         
         &--text {
             margin: 0;
+            font-weight: $regular;
+            font-size: 0.83rem;
+            line-height: 1.2rem;
+            color: $color-black;
         }
     }
 }
@@ -195,6 +249,14 @@ body {
     // Start of Responsiveness
     @include tablet {
         padding: 3rem 2rem 2.25rem;
+    }
+    // End of Responsiveness
+
+    // Start of Responsiveness
+    @include desktop {
+        display: flex;
+        max-width: 120rem;
+        margin: 0 auto;
     }
     // End of Responsiveness
 
@@ -254,8 +316,16 @@ body {
     }
     // End of Responsiveness
 
+    // Start of Responsiveness
+    @include desktop {
+        display: flex;
+        max-width: 120rem;
+        margin: 0 auto;
+    }
+    // End of Responsiveness
+
     &__info {
-        @include flexbox (column, $gap: 1rem);
+        @include flexbox (column, $gap: 1.3rem);
         @include h3 ($demi, $color-white);
 
         // Start of Responsiveness
@@ -267,6 +337,7 @@ body {
 
     &__title {
         margin: 0;
+        font-weight: $demi;
 
         // Start of Responsiveness
         @include tablet {
@@ -292,7 +363,8 @@ body {
     }
 
     &__contacts {
-        @include flexbox (column, $gap: 2rem);
+        @include flexbox (column, $gap: 1.5rem);
+        padding-top: 0.8rem;
 
         // Start of Responsiveness
         @include tablet {
@@ -306,7 +378,7 @@ body {
         width: fit-content;
 
         &--name {
-            @include p ($regular, $color-white);
+            @include p ($demi, $color-white);
             white-space: pre-line;
             margin: 0;
         }
@@ -326,7 +398,7 @@ body {
         @include flexbox;
         height: 2rem;
         max-height: 1.25rem;
-        margin-top: 3rem;
+        margin-top: 2.7rem;
 
         // Start of Responsiveness
         @include tablet {
@@ -340,7 +412,7 @@ body {
     }
 
     &__copyright {
-        @include p ($regular, $color-white);
+        @include h5 ($regular, $color-white);
         margin: 0;
 
         // Start of Responsiveness
