@@ -28,8 +28,7 @@ body {
     // Start of Responsiveness
     @include tablet {
         @include flexbox (row, $gap: 4rem);
-        padding-left: 2rem;
-        padding-right: 2rem;    
+        padding: 1.5rem 2rem 0;    
     }
     // End of Responsiveness
 
@@ -48,7 +47,8 @@ body {
 
         // Start of Responsiveness
         @include tablet {
-            margin-bottom: 1rem;
+            height: 2rem;
+            margin-bottom: 1.5rem;
         }
         // End of Responsiveness
     }
@@ -85,6 +85,7 @@ body {
         // Start of Responsiveness
         @include tablet {
             width: 4.5rem;
+            padding-bottom: 1.5rem;
         }
         // End of Responsiveness
         }
@@ -133,7 +134,7 @@ body {
 
 // Section 2: About Classes
 .about {
-    @include flexbox (column, $gap: 1rem);
+    @include flexbox (column, $gap: 2rem);
     background-color: $color-white;
     padding: 1.5rem 1rem 1rem;
 
@@ -165,15 +166,15 @@ body {
 
     &__img {
         object-fit: cover; //TODO FIX THIS
-        // height: 60vw;
-        // max-height:80vh;
-        // margin: 0 auto;
-
+        height: 50vw;
+        max-height:80vh;
+        
         // Start of Responsiveness
         @include tablet { //TODO FIX THIS
             display: flex;
-            max-width: 40rem;
+            width: 80vw;
             margin: 0 auto;
+
         }
         // End of Responsiveness
 
@@ -195,8 +196,9 @@ body {
         // Start of Responsiveness
         @include tablet { //TODO FIX THIS
             display: flex;
-            max-width: 40rem;
+            width: 80vw;
             margin: 0 auto;
+            gap: 1rem;
         }
         // End of Responsiveness
 
@@ -214,10 +216,32 @@ body {
             font-weight: $regular;
             color: $color-darkblack;
             font-size: 0.9rem;
+
+            @include tablet {
+                padding-top: 0.8rem;
+                padding-bottom: 0.5rem;
+                font-size: 1.6rem;
+                font-weight: $demi;
+                line-height: 2rem;
+            }
         }
 
         &--quote {
             margin: 0;
+
+            @include tablet {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+        }
+
+        &--name {
+            margin: 0;
+
+            @include tablet {
+                @include h3 ($demi, $color-darkblack);
+                font-size: 1rem;
+            }
         }
     }
 
@@ -226,7 +250,7 @@ body {
 
         // Start of Responsiveness
         @include tablet {
-        @include flexbox (row, $gap: 3rem);
+        @include flexbox (row, $gap: 2rem);
         }
         // End of Responsiveness
         
@@ -236,6 +260,12 @@ body {
             font-size: 0.83rem;
             line-height: 1.2rem;
             color: $color-black;
+
+            @include tablet {
+                font-size: 0.9rem;
+                line-height: 1.4rem;
+                color: $color-darkblack;
+            }
         }
     }
 }
@@ -249,6 +279,7 @@ body {
     // Start of Responsiveness
     @include tablet {
         padding: 3rem 2rem 2.25rem;
+        gap: 2rem;
     }
     // End of Responsiveness
 
@@ -310,8 +341,8 @@ body {
 
     // Start of Responsiveness
     @include tablet {
-        gap: 2.5rem;
-        padding: 3rem 2rem 4rem;
+        gap: 2rem;
+        padding: 3rem 2rem 5rem;
         position: relative;
     }
     // End of Responsiveness
@@ -351,12 +382,16 @@ body {
         @include flexbox ($gap: 1.5rem);
         align-items: center;
 
+        @include tablet {
+            gap: 2rem;
+        }
+
         &--icon {
             @include flexbox;
 
         // Start of Responsiveness
         @include tablet {
-            height: 1.5625rem;
+            height: 1.5rem;
         }
         // End of Responsiveness
         }
@@ -368,7 +403,7 @@ body {
 
         // Start of Responsiveness
         @include tablet {
-            @include flexbox (row, $gap: 5rem);
+            @include flexbox (row, $gap: 3rem);
         }
         // End of Responsiveness
     }
@@ -381,16 +416,28 @@ body {
             @include p ($demi, $color-white);
             white-space: pre-line;
             margin: 0;
+
+            @include tablet {
+                font-size: 0.9rem;
+            }
         }
 
         &--address {
             @include p ($regular, $color-white);
             white-space: pre-line;
             margin: 0;
+
+            @include tablet {
+                font-size: 0.9rem;
+            }
         }
 
         &--email {
             @include p ($regular, $color-white);
+
+            @include tablet {
+                font-size: 0.9rem;
+            }
         }
     }    
 
@@ -417,6 +464,7 @@ body {
 
         // Start of Responsiveness
         @include tablet {
+            font-size: 0.9rem;
             position: absolute;
             bottom: 3rem;
         }
