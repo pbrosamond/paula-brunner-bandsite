@@ -34,9 +34,10 @@ body {
 
     // Start of Responsiveness
     @include desktop {
-        display: flex;
         max-width: 120rem;
         margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
     }
     // End of Responsiveness
 
@@ -111,6 +112,8 @@ body {
         display: flex;
         max-width: 120rem;
         margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
     }
     // End of Responsiveness
 
@@ -149,6 +152,8 @@ body {
         display: flex;
         max-width: 120rem;
         margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
     }
     // End of Responsiveness
 
@@ -288,6 +293,8 @@ body {
         display: flex;
         max-width: 120rem;
         margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
     }
     // End of Responsiveness
 
@@ -352,6 +359,8 @@ body {
         display: flex;
         max-width: 120rem;
         margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
     }
     // End of Responsiveness
 
@@ -412,6 +421,10 @@ body {
         @include flexbox (column, $gap: 1rem);
         width: fit-content;
 
+        @include desktop {
+            gap: 1.5rem;
+        }
+
         &--name {
             @include p ($demi, $color-white);
             white-space: pre-line;
@@ -454,8 +467,11 @@ body {
             top: 3.6875rem;
             right: 2.25rem;
         }
-        // End of Responsiveness
 
+        @include desktop {
+            right: 10.25rem;
+        }
+        // End of Responsiveness
     }
 
     &__copyright {
