@@ -139,7 +139,6 @@ body {
 }
 @media (min-width: 1280px) {
   .hero {
-    display: flex;
     max-width: 120rem;
     margin: 0 auto;
     padding-right: 8rem;
@@ -329,7 +328,6 @@ body {
 }
 @media (min-width: 1280px) {
   .gallery {
-    display: flex;
     max-width: 120rem;
     margin: 0 auto;
     padding-right: 8rem;

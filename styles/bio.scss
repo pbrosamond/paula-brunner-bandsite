@@ -111,7 +111,6 @@ body {
     }
 
     @include desktop {
-        display: flex;
         max-width: 120rem;
         margin: 0 auto;
         padding-right: 8rem;
@@ -282,7 +281,6 @@ body {
     }
 
     @include desktop {
-        display: flex;
         max-width: 120rem;
         margin: 0 auto;
         padding-right: 8rem;
