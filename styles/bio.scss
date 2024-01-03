@@ -4,7 +4,6 @@
 // Section 1: Hero Classes
 .hero {
     &--bio {
-        @include h1 ($demi, $color-white);
         @include background-image (url(../assets/images/hero-bio.jpg));
     }
 }

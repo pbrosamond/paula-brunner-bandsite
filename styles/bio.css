@@ -15,11 +15,6 @@
   font-weight: 700;
 }
 .hero--bio {
-  font-size: 1.5rem;
-  font-weight: 600;
-  line-height: 2rem;
-  text-decoration: none;
-  color: #FFFFFF;
   background-image: url(../assets/images/hero-bio.jpg);
   background-position: center;
   background-size: cover;

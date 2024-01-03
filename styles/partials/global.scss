@@ -97,8 +97,6 @@ body {
 // Hero Classes
 .hero {
     @include flexbox;
-    @include h1 ($demi, $color-white);
-    @include background-image (url(../assets/images/hero-shows.jpg));
     position: relative;
     align-items: center;
     padding: 1rem;
@@ -126,6 +124,7 @@ body {
         @include h1 ($demi, $color-white);
         margin: 0;
         z-index: 1;
+        width: 15rem;
 
         // Start of Responsiveness
         @include tablet {

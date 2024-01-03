@@ -4,7 +4,21 @@
 // Section 1: Hero Classes
 .hero {
     &--shows {
-        @include h1 ($demi, $color-white);
+        @include flexbox (column, $gap: 1rem);
         @include background-image (url(../assets/images/hero-shows.jpg));
+        justify-content: center;
+        align-items: flex-start;
+    }
+
+    &__intro {
+        @include p ($regular, $color-white);
+        margin: 0;
+        z-index: 1;
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 1rem;
+        }
+        // End of Responsiveness
     }
 }
