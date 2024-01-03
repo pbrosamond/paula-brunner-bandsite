@@ -1,0 +1,28 @@
+/* Variables SCSS linked to Bio SCSS file */
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Regular.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Regular.otf") format("opentype"), url("../assets/fonts/Alternative files/AvenirNextLTPro.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Demi.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Demi.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Demi.otf") format("opentype"), url("../assets/fonts/Alternative files/AvenirNextLTProDemi.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url("../assets/fonts/AvenirNextLTPro-Bold.woff") format("woff"), url("../assets/fonts/AvenirNextLTPro-Regular.woff2") format("woff2"), url("../assets/fonts/AvenirNextLTPro-Bold.otf") format("opentype"), url("../assets/fonts/Alternative files/AvenirNextLTProBold.ttf") format("truetype");
+  font-weight: 700;
+}
+.hero--shows {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  text-decoration: none;
+  color: #FFFFFF;
+  background-image: url(../assets/images/hero-shows.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 60vw;
+  max-height: 100vh;
+}/*# sourceMappingURL=shows.css.map */

@@ -1,0 +1,294 @@
+@use './_variables.scss' as *;
+@use './_mixins.scss' as *;
+
+// Bio SCSS linked to index html files
+
+// Global Classes
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 100%; // Default font-size 16px
+}
+
+body {
+    margin: 0; // Removes white border of entire website
+    font-family: $font-family; // Sets default font to Avenir or Sans-Serif
+}
+
+// Header Classes
+.header {
+    @include flexbox (column, $gap: 0.7rem);
+    
+    background-color: $color-black;
+    align-items: center;
+    padding: 1rem 0 0;
+
+    // Start of Responsiveness
+    @include tablet {
+        @include flexbox (row, $gap: 4rem);
+        padding: 1.5rem 2rem 0;    
+    }
+
+    @include desktop {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
+    }
+    // End of Responsiveness
+
+    &__logo {
+        @include flexbox;
+        height: 2rem;
+        max-height: 1.25rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            height: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        // End of Responsiveness
+    }
+
+    &__nav {
+        @include flexbox;
+        width: 100%;
+
+        // Start of Responsiveness
+        @include tablet {
+            gap: 3rem;
+        }
+
+        @include desktop {
+            gap: 1rem;
+        }
+        // End of Responsiveness
+    }
+
+    &__link {
+        @include h3 ($regular, $color-mercury);
+        border-bottom: 3px solid $color-black;
+        padding-bottom: 0.5rem;
+        text-align: center;
+        width: 50%;
+
+        &--active {
+            color: $color-white;
+            border-bottom: 3px solid $color-white;
+        }
+
+        &:hover {
+            font-weight: $bold;
+            color: $color-white;
+            border-bottom: 3px solid $color-white;
+        }
+
+        // Start of Responsiveness
+        @include tablet {
+            width: 4.5rem;
+            padding-bottom: 1.5rem;
+        }
+        // End of Responsiveness
+        }
+}
+
+// Hero Classes
+.hero {
+    @include flexbox;
+    @include h1 ($demi, $color-white);
+    @include background-image (url(../assets/images/hero-shows.jpg));
+    position: relative;
+    align-items: center;
+    padding: 1rem;
+
+    // Start of Responsiveness
+    @include tablet {
+        padding: 3rem 2rem 2.25rem;
+        min-height: 30rem;
+        max-height: 40rem;
+    }
+
+    @include desktop {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
+    }
+    // End of Responsiveness
+
+    &::after {
+        @include overlay;
+    }
+    
+    &__title {
+        @include h1 ($demi, $color-white);
+        margin: 0;
+        z-index: 1;
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 3.75rem;
+            line-height: 4.25rem;
+        }
+        // End of Responsiveness
+    }
+}
+
+// Footer Classes
+.footer {
+    @include flexbox (column, $gap: 1rem);
+    background-color: $color-black;
+    padding: 1.5rem 1rem 1rem;
+
+    // Start of Responsiveness
+    @include tablet {
+        gap: 2rem;
+        padding: 3rem 2rem 5rem;
+        position: relative;
+    }
+
+    @include desktop {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
+        padding-bottom: 6rem;
+        gap: 1rem;
+    }
+    // End of Responsiveness
+
+    &__info {
+        @include flexbox (column, $gap: 1.3rem);
+        @include h3 ($demi, $color-white);
+
+        // Start of Responsiveness
+        @include tablet {
+            @include flexbox (row, $gap: 2.5rem);
+        }
+        // End of Responsiveness
+    }
+
+    &__title {
+        margin: 0;
+        font-weight: $demi;
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+        }
+        // End of Responsiveness
+    }
+
+    &__social {
+        @include flexbox ($gap: 1.5rem);
+        align-items: center;
+
+        // Start of Responsiveness
+        @include tablet {
+            gap: 2rem;
+        }
+        // End of Responsiveness
+
+        &--icon {
+            @include flexbox;
+
+        // Start of Responsiveness
+        @include tablet {
+            height: 1.5rem;
+        }
+        // End of Responsiveness
+        }
+    }
+
+    &__contacts {
+        @include flexbox (column, $gap: 1.5rem);
+        padding-top: 0.8rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            @include flexbox (row, $gap: 3rem);
+        }
+        // End of Responsiveness
+    }
+
+    &__text {
+        @include flexbox (column, $gap: 1rem);
+        width: fit-content;
+
+        // Start of Responsiveness
+        @include desktop {
+            gap: 1.5rem;
+        }
+        // End of Responsiveness
+
+        &--name {
+            @include p ($demi, $color-white);
+            white-space: pre-line;
+            margin: 0;
+
+            // Start of Responsiveness
+            @include tablet {
+                font-size: 0.9rem;
+            }
+            // End of Responsiveness
+        }
+
+        &--address {
+            @include p ($regular, $color-white);
+            white-space: pre-line;
+            margin: 0;
+
+            // Start of Responsiveness
+            @include tablet {
+                font-size: 0.9rem;
+            }
+            // End of Responsiveness
+        }
+
+        &--email {
+            @include p ($regular, $color-white);
+
+            // Start of Responsiveness
+            @include tablet {
+                font-size: 0.9rem;
+            }
+            // End of Responsiveness
+        }
+    }    
+
+    &__logo {
+        @include flexbox;
+        height: 2rem;
+        max-height: 1.25rem;
+        margin-top: 2.7rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            margin: 0;
+            position: absolute;
+            top: 3.6875rem;
+            right: 2.25rem;
+        }
+
+        @include desktop {
+            right: 8.5rem;
+        }
+        // End of Responsiveness
+    }
+
+    &__copyright {
+        @include h5 ($regular, $color-white);
+        margin: 0;
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 0.9rem;
+            position: absolute;
+            bottom: 3rem;
+        }
+        // End of Responsiveness
+    }
+}

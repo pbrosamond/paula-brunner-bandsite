@@ -1,0 +1,10 @@
+@use '../styles/partials/_variables.scss' as *;
+@use '../styles/partials/_mixins.scss' as *;
+
+// Section 1: Hero Classes
+.hero {
+    &--shows {
+        @include h1 ($demi, $color-white);
+        @include background-image (url(../assets/images/hero-shows.jpg));
+    }
+}
