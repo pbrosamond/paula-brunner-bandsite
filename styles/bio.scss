@@ -246,7 +246,7 @@ body {
 
         // Start of Responsiveness
         @include tablet {
-            @include flexbox (row, $gap: 2rem);
+            @include flexbox (row, $gap: 1.9rem);
         }
         // End of Responsiveness
         
