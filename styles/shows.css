@@ -40,4 +40,35 @@
   .hero__intro {
     font-size: 1rem;
   }
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  background-color: #FFFFFF;
+  padding: 1.5rem 1rem 1rem;
+}
+@media (min-width: 768px) {
+  .shows {
+    padding: 3rem 2rem 2.25rem;
+    gap: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    max-width: 120rem;
+    margin: 0 auto;
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+}
+.shows__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  text-decoration: none;
+  color: #323232;
+  margin: 0;
 }/*# sourceMappingURL=shows.css.map */
