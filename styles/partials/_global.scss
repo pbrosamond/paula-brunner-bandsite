@@ -1,5 +1,5 @@
-@use './_variables.scss' as *;
-@use './_mixins.scss' as *;
+@use './variables' as *;
+@use './mixins' as *;
 
 // Bio SCSS linked to index html files
 
@@ -124,7 +124,7 @@ body {
         @include h1 ($demi, $color-white);
         margin: 0;
         z-index: 1;
-        width: 15rem;
+        width: 30rem;
 
         // Start of Responsiveness
         @include tablet {

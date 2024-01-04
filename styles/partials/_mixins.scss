@@ -1,5 +1,5 @@
-@use './Users/paulabrunner/Desktop/Personal/Education/Brainstation/1. Projects Homework/3. Band Site Sprint/paula-brunner-bandsite/styles/partials/_variables.scss' as *;
-@use './Users/paulabrunner/Desktop/Personal/Education/Brainstation/1. Projects Homework/3. Band Site Sprint/paula-brunner-bandsite/styles/partials/_fonts.scss' as *;
+@use './variables' as *;
+@use './fonts' as *;
 
 // Responsiveness
 @mixin tablet {

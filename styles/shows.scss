@@ -1,5 +1,6 @@
-@use '../styles/partials/_variables.scss' as *;
-@use '../styles/partials/_mixins.scss' as *;
+@use './partials/variables' as *;
+@use './partials/mixins' as *;
+@use './partials/global' as *;
 
 // Section 1: Hero Classes
 .hero {
