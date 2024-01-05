@@ -16,26 +16,61 @@ function createShowElement(show) {
     const showElement = document.createElement("div");
     showElement.classList.add("shows__upcoming");
 
-    const dateElement = document.createElement("p");
-    dateElement.classList.add("shows__text2");
-    dateElement.textContent = show.date;
+    // Create DATE container
+    const dateContainer = document.createElement("div");
+    dateContainer.classList.add("shows__container2");
 
-    const venueElement = document.createElement("p");
-    venueElement.classList.add("shows__text2");
-    venueElement.textContent = show.venue;
+    const dateHeading = document.createElement("h3");
+    dateHeading.classList.add("shows__text-mobile");
+    dateHeading.textContent = "DATE";
 
-    const locationElement = document.createElement("p");
-    locationElement.classList.add("shows__text2");
-    locationElement.textContent = show.location;
+    const dateParagraph = document.createElement("p");
+    dateParagraph.classList.add("shows__text2");
+    dateParagraph.textContent = show.date;
 
+    dateContainer.appendChild(dateHeading);
+    dateContainer.appendChild(dateParagraph);
+
+    // Create VENUE container
+    const venueContainer = document.createElement("div");
+    venueContainer.classList.add("shows__container2");
+
+    const venueHeading = document.createElement("h3");
+    venueHeading.classList.add("shows__text-mobile");
+    venueHeading.textContent = "VENUE";
+
+    const venueParagraph = document.createElement("p");
+    venueParagraph.classList.add("shows__text2");
+    venueParagraph.textContent = show.venue;
+
+    venueContainer.appendChild(venueHeading);
+    venueContainer.appendChild(venueParagraph);
+
+    // Create LOCATION container
+    const locationContainer = document.createElement("div");
+    locationContainer.classList.add("shows__container2");
+
+    const locationHeading = document.createElement("h3");
+    locationHeading.classList.add("shows__text-mobile");
+    locationHeading.textContent = "LOCATION";
+
+    const locationParagraph = document.createElement("p");
+    locationParagraph.classList.add("shows__text2");
+    locationParagraph.textContent = show.location;
+
+    locationContainer.appendChild(locationHeading);
+    locationContainer.appendChild(locationParagraph);
+
+    // Create BUY TICKETS button
     const buttonElement = document.createElement("button");
     buttonElement.classList.add("shows__button");
     buttonElement.type = "submit";
     buttonElement.textContent = "BUY TICKETS";
 
-    showElement.appendChild(dateElement);
-    showElement.appendChild(venueElement);
-    showElement.appendChild(locationElement);
+    // Append all containers and button to the show element
+    showElement.appendChild(dateContainer);
+    showElement.appendChild(venueContainer);
+    showElement.appendChild(locationContainer);
     showElement.appendChild(buttonElement);
 
     return showElement;
