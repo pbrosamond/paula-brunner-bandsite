@@ -557,4 +557,54 @@ body {
     width: 30%;
     flex-grow: 1;
   }
+}
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding: 1.5rem 1rem 1rem;
+}
+.comment__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 2rem;
+  text-decoration: none;
+  color: #323232;
+  margin: 0;
+}
+.comment__section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+.comment__profile {
+  border-radius: 50%;
+  height: 2.25rem;
+  width: 2.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.comment__form {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0;
+}
+.comment__label {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  text-decoration: none;
+  color: #000000;
+}
+.comment__input {
+  padding: 0.5rem;
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  text-decoration: none;
+  color: #000000;
 }/*# sourceMappingURL=bio.css.map */

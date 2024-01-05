@@ -202,3 +202,43 @@
         }   
     }
 }
+
+// Section 4: Comments Classes
+
+.comment {
+    @include flexbox(column, $gap: 1rem);
+    padding: 1.5rem 1rem 1rem;
+
+    &__title {
+        @include h1 ($demi, $color-black);
+        margin: 0;
+    }
+
+    &__section {
+        @include flexbox($gap: 1rem);
+    }
+
+    &__profile {
+        border-radius: 50%;
+        height: 2.25rem;
+        width: 2.25rem;
+        object-fit: cover;
+    }
+
+    &__form {
+        @include flexbox(column);
+    }
+
+    &__label {
+        @include p($regular, $color-darkblack);
+    }
+
+    &__input {
+        padding: 0.5rem;
+        @include p($regular, $color-darkblack);
+    }
+
+    &__button {
+        
+    }
+}

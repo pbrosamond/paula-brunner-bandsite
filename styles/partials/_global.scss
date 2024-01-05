@@ -1,8 +1,6 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-// Bio SCSS linked to index html files
-
 // Global Classes
 * {
     box-sizing: border-box;
@@ -20,7 +18,6 @@ body {
 // Header Classes
 .header {
     @include flexbox (column, $gap: 0.7rem);
-    
     background-color: $color-black;
     align-items: center;
     padding: 1rem 0 0;
