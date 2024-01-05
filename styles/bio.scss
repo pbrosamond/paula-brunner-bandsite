@@ -217,7 +217,6 @@
     &__section {
         @include flexbox($gap: 1rem);
         padding-bottom: 1rem;
-        border-bottom: 1px solid $color-silver;
     }
 
     &__profile {
@@ -269,7 +268,20 @@
     &__output {
         @include flexbox ($gap: 1rem);
         padding-bottom: 1rem;
+    }
+
+    &__user-profile {
+        border-radius: 50%;
+        height: 2.25rem;
+        width: 2.25rem;
+        object-fit: cover;
+        background-color: grey;
+    }
+
+    &__output-item {
+        @include flexbox ($gap:1rem);
         border-bottom: 1px solid $color-silver;
+        padding-bottom: 1rem;
     }
 
     &__details {

@@ -580,7 +580,6 @@ body {
   flex-wrap: nowrap;
   gap: 1rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #AFAFAF;
 }
 .comment__profile {
   border-radius: 50%;
@@ -647,7 +646,22 @@ body {
   flex-wrap: nowrap;
   gap: 1rem;
   padding-bottom: 1rem;
+}
+.comment__user-profile {
+  border-radius: 50%;
+  height: 2.25rem;
+  width: 2.25rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: grey;
+}
+.comment__output-item {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
   border-bottom: 1px solid #AFAFAF;
+  padding-bottom: 1rem;
 }
 .comment__details {
   display: flex;

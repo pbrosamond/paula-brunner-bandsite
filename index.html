@@ -74,19 +74,19 @@
     </section>
 
     <!-- Start of Section 4: Comments -->
-    <section class="comment">
+    <section id="comment" class="comment">
 
         <h1 class="comment__title">Join the Conversation</h1>
 
         <div class="comment__section">
             <img class="comment__profile" src="./assets/images/Mohan-muruge.jpg" alt="Profile Picture">
 
-            <form class="comment__form">
+            <form class="comment__form" id="comment__form">
 
-                <label class="comment__label" for="name">NAME</label>
+                <label id="comment-name" class="comment__label" for="name">NAME</label>
                 <input class="comment__input comment__input--name" type="text" id="name" name="name" placeholder="Enter your name" required>
                 
-                <label class="comment__label" for="comment">COMMENT</label>
+                <label id="comment" class="comment__label" for="comment">COMMENT</label>
                 <textarea class="comment__input" name="comment" placeholder="Add a new comment" rows="4" required></textarea>
 
                 <button class="comment__button" type="submit">COMMENT</button>
@@ -94,26 +94,7 @@
             </form>
         </div>
 
-        <div class="comment__output">
-
-            <img class="comment__profile" src="./assets/images/Mohan-muruge.jpg" alt="Profile Picture">
-
-            <div class="comment__details">
-
-                <div class="comment__data">
-                    <p class="comment__name">Full Name</p>
-                    <p class="comment__date">DD/MM/YYYY</p> 
-                </div>
-
-                <p class="comment__text">This is art. This is inexplicable magic
-                    expressed in the purest way, everything
-                    that makes up this majestic work
-                    deserves reverence. Let us appreciate
-                    this for what it is and what it contains.</p>
-                
-            </div>
-
-        </div>
+        <!-- Comment Output DOM goes here -->
 
     </section>
 

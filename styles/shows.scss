@@ -46,12 +46,47 @@
     }
     // End of Responsiveness
 
+    &__details {
+        @include flexbox ($gap: 1rem);
+    }
+
     &__title {
         @include h1 ($demi, $color-black);
         margin: 0;
     }
 
+    &__subtitles {
+        @include flexbox ($gap: 1rem);
+        justify-content: space-between;
+    }
+
+    &__text {
+        margin: 0;
+        color: $color-silver;
+        font-size: 0.8rem;
+        font-weight: $demi;
+    }
+
+
     &__upcoming {
-        
+        @include flexbox (row, $gap: 1rem);
+        border-bottom: 1px solid $color-silver;
+        padding-left: 5.5244rem;
+    }
+
+    &__info {
+        @include flexbox (column, $gap: 0.5rem);
+    }
+
+    &__text-mobile {
+        display: none;
+    }
+
+    &__button {
+        border: 1px solid $color-black;
+        background-color: $color-black;
+        height: 2.5rem;
+        border-radius: .25rem;
+        color: $color-white;
     }
 }
