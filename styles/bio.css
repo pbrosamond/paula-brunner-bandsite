@@ -579,6 +579,8 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #AFAFAF;
 }
 .comment__profile {
   border-radius: 50%;
@@ -586,25 +588,95 @@ body {
   width: 2.25rem;
   -o-object-fit: cover;
      object-fit: cover;
+  margin-top: 1.4rem;
+  background-color: grey;
 }
 .comment__form {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 0;
+  width: 100%;
 }
 .comment__label {
   font-size: 0.8125rem;
-  font-weight: 400;
+  font-weight: 600;
   line-height: 1.125rem;
   text-decoration: none;
-  color: #000000;
+  color: #AFAFAF;
+  font-size: 0.6rem;
+  margin-bottom: 0.25rem;
 }
 .comment__input {
-  padding: 0.5rem;
+  border: 1px solid #E1E1E1;
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 0.625rem;
+  margin-bottom: 1rem;
+  background-color: #FAFAFA;
+}
+.comment__input--name {
+  height: 2.25rem;
+}
+.comment__input::-moz-placeholder {
   font-size: 0.8125rem;
   font-weight: 400;
   line-height: 1.125rem;
   text-decoration: none;
   color: #000000;
+  font-family: Avenir, sans-serif;
+}
+.comment__input::placeholder {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.125rem;
+  text-decoration: none;
+  color: #000000;
+  font-family: Avenir, sans-serif;
+}
+.comment__button {
+  border: 1px solid #323232;
+  background-color: #323232;
+  height: 2.5rem;
+  border-radius: 0.25rem;
+  color: #FFFFFF;
+}
+.comment__output {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #AFAFAF;
+}
+.comment__details {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0.6rem;
+  margin: 0;
+}
+.comment__data {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 0;
+  justify-content: space-between;
+}
+.comment__name {
+  margin: 0;
+  color: #323232;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.comment__date {
+  margin: 0;
+  color: #AFAFAF;
+  font-size: 0.8rem;
+}
+.comment__text {
+  margin: 0;
+  color: #000000;
+  font-size: 0.8rem;
+  line-height: 1.1rem;
 }/*# sourceMappingURL=bio.css.map */
