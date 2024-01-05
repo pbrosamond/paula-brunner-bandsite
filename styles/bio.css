@@ -152,7 +152,7 @@ body {
   color: #FFFFFF;
   margin: 0;
   z-index: 1;
-  width: 30rem;
+  width: 70%;
 }
 @media (min-width: 768px) {
   .hero__title {

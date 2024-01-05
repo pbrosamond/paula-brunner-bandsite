@@ -121,7 +121,7 @@ body {
         @include h1 ($demi, $color-white);
         margin: 0;
         z-index: 1;
-        width: 30rem;
+        width: 70%;
 
         // Start of Responsiveness
         @include tablet {
