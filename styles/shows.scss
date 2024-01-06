@@ -42,7 +42,6 @@
     // Start of Responsiveness
     @include tablet {
         padding: 3rem 2rem 2.25rem;
-        gap: 2rem;
     }
 
     @include desktop {
@@ -58,8 +57,15 @@
     }
 
     &__title {
-        @include h1 ($demi, $color-black);
+        @include h2 ($demi, $color-black);
         margin: 0;
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 2.25rem;
+            line-height: 4.25rem;
+        }
+        // End of Responsiveness
     }
 
     &__container {
@@ -70,6 +76,10 @@
     &__subtitles {
         @include flexbox ($gap: 18rem);
         padding-top: 0.76rem;
+
+        @include tablet {
+            padding-top: 3rem;
+        }
     }
 
     &__text {
@@ -78,6 +88,10 @@
         color: $color-silver;
         font-size: 0.8rem;
         font-weight: $demi;
+
+        @include tablet {
+            display: block;
+        }
     }
 
     &__text2 {
@@ -90,11 +104,39 @@
         justify-content: space-between;
         padding-bottom: 1rem;
         padding-top: 1rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            @include flexbox ($gap: 1rem);
+            padding: 2.25rem 2rem 2.25rem 0rem;
+            gap: 2rem;
+        }
+
+        @include desktop {
+            max-width: 120rem;
+            margin: 0 auto;
+            padding-right: 8rem;
+            padding-left: 8rem;
+        }
+        // End of Responsiveness
+
+        &:hover {
+            background-color: $color-alabaster;
+        }
+
+        &:active { //TODO Fix this
+            background-color: $color-mercury;
+        }
+
     }
 
     &__container2 {
         @include flexbox (column, $gap:0.5rem);
         justify-content: space-between;
+
+        @include tablet {
+            justify-content: center;
+        }
     }
 
     &__info {
@@ -104,10 +146,13 @@
     }
 
     &__text-mobile {
-        // display: none;
         margin: 0;
         color: $color-silver;
         font-size: 0.8rem;
         font-weight: $demi;
+
+        @include tablet {
+            display: none;
+        }
     }
 }
