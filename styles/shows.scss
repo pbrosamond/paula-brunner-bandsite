@@ -11,6 +11,12 @@
         align-items: flex-start;
     }
 
+    &__iframe {
+        width: 100%;
+        height: 10.375rem;
+        border: none;
+    }
+
     &__intro {
         @include p ($regular, $color-white);
         margin: 0;
@@ -80,7 +86,7 @@
 
     &__upcoming {
         @include flexbox (column, $gap: 1.5rem);
-        border-bottom: 1px solid $color-silver;
+        border-bottom: 1px solid $color-mercury;
         justify-content: space-between;
         padding-bottom: 1rem;
         padding-top: 1rem;
@@ -103,14 +109,5 @@
         color: $color-silver;
         font-size: 0.8rem;
         font-weight: $demi;
-    }
-
-    &__button {
-        border: 1px solid $color-black;
-        background-color: $color-black;
-        height: 2.5rem;
-        border-radius: .25rem;
-        color: $color-white;
-        width: 100%;
     }
 }

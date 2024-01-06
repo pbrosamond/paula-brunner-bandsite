@@ -20,25 +20,26 @@ function displayComment(comment) {
     if (comment.src) {
         commentProfile.src = comment.src;
     } else {
-        commentProfile.style.background = '#808080'; // Grey background color
+        commentProfile.src = '../assets/images/empty-profile.png'
+        commentProfile.style.background = '#E1E1E1'; // Grey background color
     }
 
     const commentDetails = document.createElement('div');
-    commentDetails.className = 'comment__details';
+    commentDetails.classList.add('comment__details');
 
     const commentData = document.createElement('div');
-    commentData.className = 'comment__data';
+    commentData.classList.add('comment__data');
 
     const commentName = document.createElement('p');
-    commentName.className = 'comment__name';
+    commentName.classList.add('comment__name');
     commentName.textContent = comment.name;
 
     const commentDate = document.createElement('p');
-    commentDate.className = 'comment__date';
+    commentDate.classList.add('comment__date');
     commentDate.textContent = formatDate(comment.timestamp);
 
     const commentText = document.createElement('p');
-    commentText.className = 'comment__text';
+    commentText.classList.add('comment__text');
     commentText.textContent = comment.text;
 
     commentData.appendChild(commentName);
@@ -63,13 +64,15 @@ function formatDate(date) {
 function submitComment(event) {
     event.preventDefault();
 
-    const nameInput = document.getElementById('name');
-    const commentInput = document.getElementById('comment'); 
-    // TODO
+    const nameInput = document.getElementById('comment-name');
+    const commentInput = document.getElementById('comment-comment'); 
 
     // Get input values
-    const name = nameInput.value;
-    const commentText = commentInput.value;
+
+    const name = event.target.name.value
+    const commentText = event.target.comment.value
+
+    console.log(name, commentText)
 
     // Validate input
     if (!name || !commentText) {
@@ -91,8 +94,7 @@ function submitComment(event) {
     displayComment(newComment);
 
     // Clear input fields
-    nameInput.value = '';
-    commentInput.value = '';
+    event.target.reset();
 }
 
 // Step 5: Add event listener to the form

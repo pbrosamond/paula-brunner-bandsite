@@ -209,14 +209,48 @@
     @include flexbox(column, $gap: 1rem);
     padding: 1.5rem 1rem 1rem;
 
+    // Start of Responsiveness
+    @include tablet {
+        padding: 3rem 2rem 2.25rem;
+        gap: 2rem;
+    }
+
+    @include desktop {
+        max-width: 120rem;
+        margin: 0 auto;
+        padding-right: 8rem;
+        padding-left: 8rem;
+    }
+    // End of Responsiveness
+
     &__title {
         @include h1 ($demi, $color-black);
         margin: 0;
+
+        // Start of Responsiveness
+        @include tablet {
+            font-size: 2.25rem;
+            line-height: 2.75rem;
+        }
+        // End of Responsiveness
     }
 
     &__section {
         @include flexbox($gap: 1rem);
         padding-bottom: 1rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            margin: 0 auto;
+            width: 85%;
+            max-width: 54rem;
+            gap: 1rem;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
+        // End of Responsiveness
     }
 
     &__profile {
@@ -225,7 +259,13 @@
         width: 2.25rem;
         object-fit: cover;
         margin-top: 1.4rem;
-        background-color: grey;
+
+        // Start of Responsiveness
+        @include tablet {
+            height: 3rem;
+            width: 3rem;
+        }
+        // End of Responsiveness        
     }
 
     &__form {
@@ -246,6 +286,7 @@
         padding: .625rem;
         margin-bottom: 1rem;
         background-color: $color-alabaster;
+        font-family: $font-family;
 
         &--name {
             height: 2.25rem;
@@ -255,14 +296,6 @@
             @include p($regular, $color-darkblack);
             font-family: $font-family;
           }
-    }
-
-    &__button {
-        border: 1px solid $color-black;
-        background-color: $color-black;
-        height: 2.5rem;
-        border-radius: .25rem;
-        color: $color-white;
     }
 
     &__output {
@@ -276,22 +309,44 @@
         width: 2.25rem;
         object-fit: cover;
         background-color: grey;
+
+        // Start of Responsiveness
+        @include tablet {
+            height: 3rem;
+            width: 3rem;
+        }
+        // End of Responsiveness 
     }
 
     &__output-item {
         @include flexbox ($gap:1rem);
-        border-bottom: 1px solid $color-silver;
+        border-bottom: 1px solid $color-mercury;
         padding-bottom: 1rem;
+
+        // Start of Responsiveness
+        @include tablet {
+            margin: 0 auto;
+            width: 85%;
+            max-width: 54rem;
+            gap: 1rem;
+        }
+
+        @include desktop {
+            width: 50%;
+        }
+        // End of Responsiveness
     }
 
     &__details {
         @include flexbox (column, $gap: 0.6rem);
         margin: 0;
+        width: 100%;
     }
  
     &__data {
         @include flexbox;
         justify-content: space-between;
+        width: 100%;
     }
 
     &__name {

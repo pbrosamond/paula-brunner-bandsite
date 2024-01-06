@@ -63,7 +63,7 @@ function createShowElement(show) {
 
     // Create BUY TICKETS button
     const buttonElement = document.createElement("button");
-    buttonElement.classList.add("shows__button");
+    buttonElement.classList.add("button");
     buttonElement.type = "submit";
     buttonElement.textContent = "BUY TICKETS";
 
