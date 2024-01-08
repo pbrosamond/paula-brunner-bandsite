@@ -19,13 +19,16 @@ function createShowElement(show) {
     // Create DATE container
     const dateContainer = document.createElement("div");
     dateContainer.classList.add("shows__container2");
+    dateContainer.classList.add("shows__text2--bold");
 
     const dateHeading = document.createElement("h3");
     dateHeading.classList.add("shows__text-mobile");
+    dateContainer.classList.add("shows__text2--bold");
     dateHeading.textContent = "DATE";
 
     const dateParagraph = document.createElement("p");
     dateParagraph.classList.add("shows__text2");
+    dateContainer.classList.add("shows__text2--bold");
     dateParagraph.textContent = show.date;
 
     dateContainer.appendChild(dateHeading);

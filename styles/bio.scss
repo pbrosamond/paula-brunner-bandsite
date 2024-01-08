@@ -243,12 +243,11 @@
         @include tablet {
             margin: 0 auto;
             width: 85%;
-            max-width: 54rem;
             gap: 1rem;
         }
 
         @include desktop {
-            width: 50%;
+            width: 54%;
         }
         // End of Responsiveness
     }
@@ -273,6 +272,12 @@
         width: 100%;
     }
 
+    &__error {
+        &:focus {
+            outline: 1px solid $color-red;
+        }
+    }
+
     &__label {
         @include p($demi, $color-silver);
         font-size: 0.6rem;
@@ -287,6 +292,10 @@
         margin-bottom: 1rem;
         background-color: $color-alabaster;
         font-family: $font-family;
+
+        &:focus {
+            outline: 1px solid $color-darkblack;
+        }
 
         &--name {
             height: 2.25rem;
@@ -327,12 +336,11 @@
         @include tablet {
             margin: 0 auto;
             width: 85%;
-            max-width: 54rem;
             gap: 1rem;
         }
 
         @include desktop {
-            width: 50%;
+            width: 54%;
         }
         // End of Responsiveness
     }

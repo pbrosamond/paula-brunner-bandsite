@@ -625,13 +625,12 @@ body {
   .comment__section {
     margin: 0 auto;
     width: 85%;
-    max-width: 54rem;
     gap: 1rem;
   }
 }
 @media (min-width: 1280px) {
   .comment__section {
-    width: 50%;
+    width: 54%;
   }
 }
 .comment__profile {
@@ -655,6 +654,9 @@ body {
   gap: 0;
   width: 100%;
 }
+.comment__error:focus {
+  outline: 1px solid #D22D2D;
+}
 .comment__label {
   font-size: 0.8125rem;
   font-weight: 600;
@@ -672,6 +674,9 @@ body {
   margin-bottom: 1rem;
   background-color: #FAFAFA;
   font-family: Avenir, sans-serif;
+}
+.comment__input:focus {
+  outline: 1px solid #000000;
 }
 .comment__input--name {
   height: 2.25rem;
@@ -725,13 +730,12 @@ body {
   .comment__output-item {
     margin: 0 auto;
     width: 85%;
-    max-width: 54rem;
     gap: 1rem;
   }
 }
 @media (min-width: 1280px) {
   .comment__output-item {
-    width: 50%;
+    width: 54%;
   }
 }
 .comment__details {

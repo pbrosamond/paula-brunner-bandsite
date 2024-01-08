@@ -376,11 +376,32 @@ body {
   max-height: 100vh;
   justify-content: center;
   align-items: flex-start;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.hero__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 1rem;
+}
+@media (min-width: 1280px) {
+  .hero__container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
 }
 .hero__iframe {
   width: 100%;
-  height: 10.375rem;
   border: none;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .hero__iframe {
+    width: 60%;
+  }
 }
 .hero__intro {
   font-size: 0.8125rem;
@@ -390,6 +411,7 @@ body {
   color: #FFFFFF;
   margin: 0;
   z-index: 1;
+  padding-top: 1rem;
 }
 @media (min-width: 768px) {
   .hero__intro {
@@ -413,6 +435,10 @@ body {
 }
 @media (min-width: 1280px) {
   .shows {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 0;
     max-width: 120rem;
     margin: 0 auto;
     padding-right: 8rem;
@@ -450,12 +476,20 @@ body {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
-  gap: 18rem;
-  padding-top: 0.76rem;
+  gap: 0;
+  padding: 0.76rem 2rem 0;
 }
 @media (min-width: 768px) {
   .shows__subtitles {
     padding-top: 3rem;
+    width: 100%;
+    gap: 2.2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__subtitles {
+    margin: 2.125rem 0 0 9.75rem;
+    padding: 0 2rem;
   }
 }
 .shows__text {
@@ -468,10 +502,15 @@ body {
 @media (min-width: 768px) {
   .shows__text {
     display: block;
+    width: 8rem;
   }
 }
 .shows__text2 {
   margin: 0;
+  font-size: 0.8rem;
+}
+.shows__text2--bold {
+  font-weight: 600;
 }
 .shows__upcoming {
   display: flex;
@@ -489,16 +528,13 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     gap: 1rem;
-    padding: 2.25rem 2rem 2.25rem 0rem;
+    padding: 2.25rem 2rem 2.25rem;
     gap: 2rem;
   }
 }
 @media (min-width: 1280px) {
   .shows__upcoming {
-    max-width: 120rem;
-    margin: 0 auto;
-    padding-right: 8rem;
-    padding-left: 8rem;
+    margin-left: 9.75rem;
   }
 }
 .shows__upcoming:hover {
@@ -513,6 +549,7 @@ body {
   flex-wrap: nowrap;
   gap: 0.5rem;
   justify-content: space-between;
+  width: 8rem;
 }
 @media (min-width: 768px) {
   .shows__container2 {
