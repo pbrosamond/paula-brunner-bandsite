@@ -114,22 +114,6 @@ function submitComment(event) {
 
     console.log(name, commentText)
 
-    // Validate input
-    if (!name || !commentText) {
-        // Add red border if there is an error
-        nameInput.classList.add('comment__error');
-        commentInput.classList.add('comment__error');
-        
-        // Set error text for name and comment fields
-        nameInput.innerText = 'Please fill in name field.';
-        commentInput.innerText = 'Please fill in comment field.';
-        return;
-    }
-
-    // Reset border on successful submission
-    nameInput.classList.remove('comment__error');
-    commentInput.classList.remove('comment__error');
-
     // Create a new comment object
     const newComment = {
         name: name,
@@ -140,8 +124,9 @@ function submitComment(event) {
     // Add the new comment to the beginning of the array
     commentsArray.unshift(newComment);
 
-    // Display the new comment
-    displayComment(newComment);
+    commentsArray.forEach(comment => {
+        displayComment(comment);
+    });
 
     // Clear input fields
     event.target.reset();
