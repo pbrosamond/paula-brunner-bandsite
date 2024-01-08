@@ -178,6 +178,12 @@ body {
   .hero__title {
     font-size: 3.75rem;
     line-height: 4.25rem;
+    width: 32rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__title {
+    width: 32rem;
   }
 }
 

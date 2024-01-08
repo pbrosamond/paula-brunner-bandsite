@@ -146,6 +146,11 @@ body {
         @include tablet {
             font-size: 3.75rem;
             line-height: 4.25rem;
+            width: 32rem;
+        }
+
+        @include desktop {
+            width: 32rem;
         }
         // End of Responsiveness
     }
