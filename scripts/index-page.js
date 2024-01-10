@@ -5,7 +5,7 @@ const commentsArray = [
     { name: 'Miles Acosta', date: '12/20/2020', text: `I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.` }
 ];
 
-//Step 2: 
+//Step 2: Define container outside of any functions
 const container = document.querySelector('.comment__container');
 const commentForm = document.querySelector('.comment__form');
 
@@ -82,9 +82,16 @@ commentForm.addEventListener("submit", (event) => {
 });
 
 
-// NOTE: Step 1 Array
-// Step 2 Define container outside of any functions
-// Step 3 Define displayComment function
+
+
+
+
+
+
+
+
+
+
 
 
 

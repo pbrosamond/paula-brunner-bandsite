@@ -8,7 +8,7 @@ const showsArray = [
     { date: "Wed Dec 15 2021", venue: "Press Club", location: "San Francisco, CA" }
 ];
 
-// Step 2: 
+// Step 2: Define container outside of any functions
 const showsContainer = document.querySelector(".shows__list");
 
 // Step 3: Function to display shows on the page
