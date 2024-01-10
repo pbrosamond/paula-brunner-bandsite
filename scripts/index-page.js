@@ -10,7 +10,7 @@ const container = document.querySelector('.comment__container');
 const commentForm = document.querySelector('.comment__form');
 
 // Step 3: Function to display a comment on the page
-function displayComment(comment) { // anonymous function syntax: const displayComment = (comment) => {}
+function displayComment(comment) { // arrow function syntax: const displayComment = (comment) => {}
 
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment__output-item';
@@ -53,7 +53,6 @@ function displayComment(comment) { // anonymous function syntax: const displayCo
 commentsArray.forEach(comment => {
     displayComment(comment);
 });
-
 
 //Step 5 Add event listener to form (Makes function run on button click)
 
