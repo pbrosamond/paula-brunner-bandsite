@@ -5,15 +5,12 @@ const commentsArray = [
     { name: 'Miles Acosta', date: '12/20/2020', text: `I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.` }
 ];
 
-//Step 2
+//Step 2: 
 const container = document.querySelector('.comment__container');
-
 const commentForm = document.querySelector('.comment__form');
 
 // Step 3: Function to display a comment on the page
-
-// const displayCOmment = (comment) => {}
-function displayComment(comment) {
+function displayComment(comment) { // anonymous function syntax: const displayComment = (comment) => {}
 
     const commentDiv = document.createElement('div');
     commentDiv.className = 'comment__output-item';
@@ -58,42 +55,30 @@ commentsArray.forEach(comment => {
 });
 
 
-//Step 5 Add event listener to form
+//Step 5 Add event listener to form (Makes function run on button click)
 
 commentForm.addEventListener("submit", (event) => {
     event.preventDefault();
-
-    console.log(event)
-
-    //const formatDate = () => {} Arrow function.
-
-    function formatDate() {
-        const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-        return new Date().toLocaleDateString('en-US', options);
-    }
-
-    const currentDate = formatDate();
 
     // Get input values and...
     // Create a new comment object
     const newComment = {
         name: event.target.name.value,
-        date: currentDate,
+        date: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}),
         text: event.target.comment.value
     };
 
     // Add the new comment to the beginning of the array
     commentsArray.unshift(newComment);
 
-    commentsArray.innerText = "";
-    container.innerText = "";
+    // Clears pre-displayed comments
+    container.textContent = "";
 
+    // Redisplays each comment
     commentsArray.forEach(comment => {
         displayComment(comment);
     });
 
-    // Clear input fields
-    event.target.reset();
 });
 
 

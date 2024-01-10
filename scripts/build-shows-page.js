@@ -1,24 +1,26 @@
-// JavaScript (Your existing script plus the new code)
-
-// Define an array with show data
-const showsData = [
+// Step 1: Create an array with default shows
+const showsArray = [
     { date: "Mon Sept 06 2021", venue: "Ronald Lane", location: "San Francisco, CA" },
     { date: "Tue Sept 21 2021", venue: "Pier 3 East", location: "San Francisco, CA" },
     { date: "Fri Oct 15 2021", venue: "View Lounge", location: "San Francisco, CA" },
     { date: "Sat Nov 06 2021", venue: "Hyatt Agency", location: "San Francisco, CA" },
     { date: "Fri Nov 26 2021", venue: "Moscow Center", location: "San Francisco, CA" },
     { date: "Wed Dec 15 2021", venue: "Press Club", location: "San Francisco, CA" }
-    // Add more show data as needed
 ];
 
-// Function to create a show element
-function createShowElement(show) {
+// Step 2: 
+const showsContainer = document.querySelector(".shows__list");
+
+// Step 3: Function to display shows on the page
+function displayShows(show) { //Anonymous function syntax: const displayShows = (show) => {}
+
+    // Create ALIGNMENT element
     const showElement = document.createElement("div");
     showElement.classList.add("shows__upcoming");
 
     // Create DATE container
     const dateContainer = document.createElement("div");
-    dateContainer.classList.add("shows__container2");
+    dateContainer.classList.add("shows__list");
     dateContainer.classList.add("shows__text2--bold");
 
     const dateHeading = document.createElement("h3");
@@ -36,7 +38,7 @@ function createShowElement(show) {
 
     // Create VENUE container
     const venueContainer = document.createElement("div");
-    venueContainer.classList.add("shows__container2");
+    venueContainer.classList.add("shows__list");
 
     const venueHeading = document.createElement("h3");
     venueHeading.classList.add("shows__text-mobile");
@@ -51,7 +53,7 @@ function createShowElement(show) {
 
     // Create LOCATION container
     const locationContainer = document.createElement("div");
-    locationContainer.classList.add("shows__container2");
+    locationContainer.classList.add("shows__list");
 
     const locationHeading = document.createElement("h3");
     locationHeading.classList.add("shows__text-mobile");
@@ -76,36 +78,11 @@ function createShowElement(show) {
     showElement.appendChild(locationContainer);
     showElement.appendChild(buttonElement);
 
-    return showElement;
+    // Append all show elements to container element
+    showsContainer.appendChild(showElement);
 }
 
-// Function to display shows
-function displayShows() {
-    const showsContainer = document.querySelector(".shows__container");
-
-    // Loop through the showsData and display each show
-    showsData.forEach((show) => {
-        const showElement = createShowElement(show);
-        showsContainer.appendChild(showElement);
-    });
-}
-
-// Initial display
-displayShows();
-
-// Function to re-display shows
-function reDisplayShows() {
-    // Clear existing content
-    const showsContainer = document.querySelector(".shows__container");
-    showsContainer.innerHTML = "";
-
-    // Display the shows
-    displayShows();
-}
-
-// Example: Trigger re-display on button click
-const reDisplayButton = document.getElementById("reDisplayButton");
-
-if (reDisplayButton) {
-    reDisplayButton.addEventListener("click", reDisplayShows);
-}
+// Step 4 Use function to print comments on page load
+showsArray.forEach((show) => {
+    const showElement = displayShows(show);
+});

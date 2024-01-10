@@ -103,7 +103,8 @@
         // End of Responsiveness
     }
 
-    &__container {
+    &__container,
+    &__list {
         @include flexbox (column);
         width: 100%;
     }
