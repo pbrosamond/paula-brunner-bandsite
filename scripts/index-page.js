@@ -34,8 +34,22 @@ function displayComment(comment) { // arrow function syntax: const displayCommen
 
     const commentDate = document.createElement('p');
     commentDate.classList.add('comment__date');
-    commentDate.textContent = comment.date;
-    // commentDate.textContent = formatTimestamp(comment.timestamp);
+    commentDate.textContent = formatTimestamp(comment.timestamp);
+
+    // Function to format the timestamp
+    function formatTimestamp(timestamp) {
+        const date = new Date(timestamp);
+        const options = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+            // hour: 'numeric',
+            // minute: 'numeric',
+            // second: 'numeric',
+            // timeZoneName: 'short'
+        };
+        return date.toLocaleDateString('en-US', options);
+    }
 
     const commentText = document.createElement('p');
     commentText.classList.add('comment__text');
