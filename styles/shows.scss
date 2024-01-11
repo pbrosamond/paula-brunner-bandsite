@@ -103,6 +103,11 @@
         // End of Responsiveness
     }
 
+    &__test {
+        @include flexbox (column);
+        width: 100%; 
+    }
+
     &__container,
     &__list {
         @include flexbox (column);

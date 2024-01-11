@@ -1,9 +1,13 @@
+import BandSiteApi from "../scripts/band-site-api.js";
+
+const myData = new BandSiteApi("433d7a0f-1374-49dc-b187-d6b68f9d743f");
+
 // Step 1: Create an array with default comments
-const commentsArray = [
-    { name: 'Connor Walton', date: '02/17/2021', text: `This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.` },
-    { name: 'Emilie Beach', date: '01/09/2021', text: `I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.` },
-    { name: 'Miles Acosta', date: '12/20/2020', text: `I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.` }
-];
+// const commentsArray = [
+//     { name: 'Connor Walton', date: '02/17/2021', text: `This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.` },
+//     { name: 'Emilie Beach', date: '01/09/2021', text: `I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.` },
+//     { name: 'Miles Acosta', date: '12/20/2020', text: `I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.` }
+// ];
 
 //Step 2: Define container outside of any functions
 const container = document.querySelector('.comment__container');
@@ -35,7 +39,7 @@ function displayComment(comment) { // arrow function syntax: const displayCommen
 
     const commentText = document.createElement('p');
     commentText.classList.add('comment__text');
-    commentText.textContent = comment.text;
+    commentText.textContent = comment.comment;
 
     commentData.appendChild(commentName);
     commentData.appendChild(commentDate);
@@ -49,36 +53,52 @@ function displayComment(comment) { // arrow function syntax: const displayCommen
     container.appendChild(commentDiv);
 }
 
-// Step 4 Use function to print comments on page load
-commentsArray.forEach(comment => {
-    displayComment(comment);
-});
+const renderComments = async () => {
+    try {
+        const commentsArray = await myData.getComments()
+        commentsArray.forEach((comment) => {
+            const showComment = displayComment(comment);
+            });
+            console.log (commentsArray);
+    } catch (error) {
+        console.error("Not Working", error);
+    }
+}
 
-//Step 5 Add event listener to form (Makes function run on button click)
+renderComments()
 
-commentForm.addEventListener("submit", (event) => {
-    event.preventDefault();
+// // Step 4 Use function to print comments on page load
+// commentsArray.forEach(comment => {
+//     displayComment(comment);
+// });
 
-    // Get input values and...
-    // Create a new comment object
-    const newComment = {
-        name: event.target.name.value,
-        date: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}),
-        text: event.target.comment.value
-    };
+// //Step 5 Add event listener to form (Makes function run on button click)
 
-    // Add the new comment to the beginning of the array
-    commentsArray.unshift(newComment);
+// commentForm.addEventListener("submit", (event) => {
+//     event.preventDefault();
 
-    // Clears pre-displayed comments
-    container.textContent = "";
+//     // Get input values and...
+//     // Create a new comment object
+//     const newComment = {
+//         name: event.target.name.value,
+//         date: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}),
+//         text: event.target.comment.value
+//     };
 
-    // Redisplays each comment
-    commentsArray.forEach(comment => {
-        displayComment(comment);
-    });
 
-});
+
+//     // Add the new comment to the beginning of the array
+//     commentsArray.unshift(newComment); // Replaced by post call.
+
+//     // Clears pre-displayed comments
+//     container.textContent = "";
+
+//     // Redisplays each comment
+//     commentsArray.forEach(comment => {
+//         displayComment(comment);
+//     });
+
+// });
 
 
 

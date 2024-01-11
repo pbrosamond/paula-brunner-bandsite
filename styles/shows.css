@@ -487,6 +487,13 @@ body {
     line-height: 4.25rem;
   }
 }
+.shows__test {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  gap: 0;
+  width: 100%;
+}
 .shows__container, .shows__list {
   display: flex;
   flex-direction: column;
