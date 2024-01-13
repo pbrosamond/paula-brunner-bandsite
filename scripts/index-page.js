@@ -2,6 +2,7 @@ import BandSiteApi from "../scripts/band-site-api.js";
 
 const myData = new BandSiteApi("433d7a0f-1374-49dc-b187-d6b68f9d743f");
 
+
 // Step 1: Create an array with default comments
 // const commentsArray = [
 //     { name: 'Connor Walton', date: '02/17/2021', text: `This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.` },
@@ -81,6 +82,48 @@ const renderComments = async () => {
 
 renderComments()
 
+// const postComment = async () => {
+//     try {
+//         commentForm.addEventListener("submit", async (event) => {
+//             event.preventDefault();
+//             try {
+//                 const newComment = {
+//                     name: event.target.name.value,
+//                     date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }),
+//                     text: event.target.comment.value
+//                 };
+
+//                 // Call the asynchronous function to post the comment
+//                 const commentForm = await myData.postComment(newComment);
+
+//                 // Retrieve updated comments after posting
+//                 const commentsArray = await myData.getComments();
+
+//                 // Update the container with the updated comments
+//                 container.textContent = "";
+
+//                 renderComments();
+
+//                 console.log(commentsArray);
+//             } catch (error) {
+//                 console.error("Error posting comment", error);
+//             }
+//         });
+//     } catch (error) {
+//         console.error("Not Working Event Listener", error);
+//     }
+// };
+
+// postComment();
+
+
+
+
+
+
+
+
+
 // // Step 4 Use function to print comments on page load
 // commentsArray.forEach(comment => {
 //     displayComment(comment);
@@ -98,8 +141,6 @@ renderComments()
 //         date: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}),
 //         text: event.target.comment.value
 //     };
-
-
 
 //     // Add the new comment to the beginning of the array
 //     commentsArray.unshift(newComment); // Replaced by post call.

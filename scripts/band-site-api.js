@@ -1,18 +1,23 @@
 const apiKey = "433d7a0f-1374-49dc-b187-d6b68f9d743f";
 
 class BandSiteApi {
-    constructor(apiKey, baseUrl) {
+    constructor(apiKey) {
       this.apiKey = apiKey;
       this.baseUrl = "https://project-1-api.herokuapp.com";
     };
 
-    async postComment(commentObject) {
+    async postComment(myObject) {
         try {
-            const response1 = await axios.post(`${this.baseUrl}/comments?api_key=${this.key}`, { //This is the method
-                commentObject //this is the body
-                }
-            )
-            this.getComments()          
+            const response = await axios.post(`${this.baseUrl}/comments?api_key=${this.apiKey}`, myObject, { //This is the method
+            headers: {
+                "Content-Type": "application/json"
+            }
+            });      
+            const myObject = {
+                name: response.name,
+                comment: response.comment
+            } 
+            return response.data;
         } catch (error) {
             console.error("Post Comment Not Working", error);
         }   
@@ -20,8 +25,8 @@ class BandSiteApi {
 
     async getComments() {
         try {
-            const response2 = await axios.get(`${this.baseUrl}/comments?api_key=${this.key}`)
-            return response2.data;  
+            const response = await axios.get(`${this.baseUrl}/comments?api_key=${this.apiKey}`)
+            return response.data;  
         } catch (error) {
             console.error("Get Comment Not Working", error);
         }
@@ -29,8 +34,8 @@ class BandSiteApi {
 
     async getShows() {
         try {
-            const response3 = await axios.get(`${this.baseUrl}/showdates?api_key=${this.key}`)
-            return response3.data;  
+            const response = await axios.get(`${this.baseUrl}/showdates?api_key=${this.apiKey}`)
+            return response.data;  
         } catch (error) {
             console.error("Get Shows Not Working", error);
         }
@@ -38,6 +43,9 @@ class BandSiteApi {
 }
 
 export default BandSiteApi;
+
+
+
 
 // const addToIndexDom = async () => {
 //     const newComment = await myData.getComments();
