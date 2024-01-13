@@ -8,15 +8,7 @@ class BandSiteApi {
 
     async postComment(myObject) {
         try {
-            const response = await axios.post(`${this.baseUrl}/comments?api_key=${this.apiKey}`, myObject, { //This is the method
-            headers: {
-                "Content-Type": "application/json"
-            }
-            });      
-            const myObject = {
-                name: response.name,
-                comment: response.comment
-            } 
+            const response = await axios.post(`${this.baseUrl}/comments?api_key=${this.apiKey}`, myObject) //This is the method  
             return response.data;
         } catch (error) {
             console.error("Post Comment Not Working", error);

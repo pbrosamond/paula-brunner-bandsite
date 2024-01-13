@@ -82,39 +82,42 @@ const renderComments = async () => {
 
 renderComments()
 
-// const postComment = async () => {
-//     try {
-//         commentForm.addEventListener("submit", async (event) => {
-//             event.preventDefault();
-//             try {
-//                 const newComment = {
-//                     name: event.target.name.value,
-//                     date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: '2-digit', day: '2-digit' }),
-//                     text: event.target.comment.value
-//                 };
+const postComment = async () => {
+    try {
+        commentForm.addEventListener("submit", async (event) => {
+            console.log("hello2")
+            event.preventDefault();
+            try {
+                const newComment = {
+                    name: event.target.name.value,
+                    comment: event.target.comment.value
+                };
 
-//                 // Call the asynchronous function to post the comment
-//                 const commentForm = await myData.postComment(newComment);
+                // Call the asynchronous function to post the comment
+                const commentForm = await myData.postComment(newComment);
 
-//                 // Retrieve updated comments after posting
-//                 const commentsArray = await myData.getComments();
+                // Retrieve updated comments after posting
+                const commentsArray = await myData.getComments();
 
-//                 // Update the container with the updated comments
-//                 container.textContent = "";
+                // Add the new comment to the beginning of the array
+                commentsArray.unshift(newComment); // Replaced by post call.
 
-//                 renderComments();
+                // Update the container with the updated comments
+                container.textContent = "";
 
-//                 console.log(commentsArray);
-//             } catch (error) {
-//                 console.error("Error posting comment", error);
-//             }
-//         });
-//     } catch (error) {
-//         console.error("Not Working Event Listener", error);
-//     }
-// };
+                renderComments();
 
-// postComment();
+                console.log(commentsArray);
+            } catch (error) {
+                console.error("Error posting comment", error);
+            }
+        });
+    } catch (error) {
+        console.error("Not Working Event Listener", error);
+    }
+};
+
+postComment();
 
 
 
