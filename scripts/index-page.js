@@ -71,10 +71,16 @@ function displayComment(comment) { // arrow function syntax: const displayCommen
 const renderComments = async () => {
     try {
         const commentsArray = await myData.getComments()
-        commentsArray.forEach((comment) => {
+
+        const sortedComments = commentsArray.sort((a, b) => {
+            return b.timestamp - a.timestamp;
+        });
+
+        sortedComments.forEach((comment) => {
             const showComment = displayComment(comment);
             });
             console.log (commentsArray);
+
     } catch (error) {
         console.error("Not Working", error);
     }
@@ -85,32 +91,25 @@ renderComments()
 const postComment = async () => {
     try {
         commentForm.addEventListener("submit", async (event) => {
-            console.log("hello2")
             event.preventDefault();
-            try {
-                const newComment = {
-                    name: event.target.name.value,
-                    comment: event.target.comment.value
-                };
 
-                // Call the asynchronous function to post the comment
-                const commentForm = await myData.postComment(newComment);
+            const newComment = {
+                name: event.target.name.value,
+                comment: event.target.comment.value
+            };
 
-                // Retrieve updated comments after posting
-                const commentsArray = await myData.getComments();
+            // Call the asynchronous function to post the comment
+            const commentForm = await myData.postComment(newComment);
 
-                // Add the new comment to the beginning of the array
-                commentsArray.unshift(newComment); // Replaced by post call.
+            // Retrieve updated comments after posting
+            const commentsArray = await myData.getComments();
 
-                // Update the container with the updated comments
-                container.textContent = "";
+            // Update the container with the updated comments
+            container.textContent = "";
 
-                renderComments();
+            renderComments();
 
-                console.log(commentsArray);
-            } catch (error) {
-                console.error("Error posting comment", error);
-            }
+            console.log(commentsArray);
         });
     } catch (error) {
         console.error("Not Working Event Listener", error);
