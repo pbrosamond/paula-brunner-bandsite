@@ -37,17 +37,13 @@ function displayComment(comment) { // arrow function syntax: const displayCommen
     commentDate.classList.add('comment__date');
     commentDate.textContent = formatTimestamp(comment.timestamp);
 
-    // Function to format the timestamp
+    // Function to format the timestamp --> Shown as an example to create a timestamp differently to how it was done in shows.
     function formatTimestamp(timestamp) {
         const date = new Date(timestamp);
         const options = {
             year: 'numeric',
             month: '2-digit',
             day: '2-digit',
-            // hour: 'numeric',
-            // minute: 'numeric',
-            // second: 'numeric',
-            // timeZoneName: 'short'
         };
         return date.toLocaleDateString('en-US', options);
     }
@@ -104,8 +100,11 @@ const postComment = async () => {
             // Retrieve updated comments after posting
             const commentsArray = await myData.getComments();
 
-            // Update the container with the updated comments
-            container.textContent = "";
+            // Update the container and reset input values
+            event.target.name.value = "";
+            event.target.comment.value = "";
+
+            // event.reset();
 
             renderComments();
 
@@ -117,103 +116,3 @@ const postComment = async () => {
 };
 
 postComment();
-
-
-
-
-
-
-
-
-
-// // Step 4 Use function to print comments on page load
-// commentsArray.forEach(comment => {
-//     displayComment(comment);
-// });
-
-// //Step 5 Add event listener to form (Makes function run on button click)
-
-// commentForm.addEventListener("submit", (event) => {
-//     event.preventDefault();
-
-//     // Get input values and...
-//     // Create a new comment object
-//     const newComment = {
-//         name: event.target.name.value,
-//         date: new Date().toLocaleDateString('en-US', {year: 'numeric', month: '2-digit', day: '2-digit'}),
-//         text: event.target.comment.value
-//     };
-
-//     // Add the new comment to the beginning of the array
-//     commentsArray.unshift(newComment); // Replaced by post call.
-
-//     // Clears pre-displayed comments
-//     container.textContent = "";
-
-//     // Redisplays each comment
-//     commentsArray.forEach(comment => {
-//         displayComment(comment);
-//     });
-
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // Step 2: Initial rendering of comments - Move to after the function.
-// commentsArray.forEach(comment => {
-//     displayComment(comment);
-
-//     console.log(displayComment(comment))
-// });
-
-//     // Step 4: Function to format timestamp dynamically
-//     function formatTimestamp(timestamp) {
-//         const now = new Date();
-//         const diffInMilliseconds = now - timestamp;
-//         const seconds = Math.floor(diffInMilliseconds / 1000);
-        
-//         if (seconds < 60) {
-//             return `${seconds} sec ago`;
-//         }
-    
-//         const minutes = Math.floor(seconds / 60);
-//         if (minutes < 60) {
-//             return `${minutes} min ago`;
-//         }
-    
-//         const hours = Math.floor(minutes / 60);
-//         if (hours < 24) {
-//             return `${hours} hr ago`;
-//         }
-    
-//         const days = Math.floor(hours / 24);
-//         if (days < 7) {
-//             return `${days} day${days > 1 ? 's' : ''} ago`;
-//         }
-    
-//         const weeks = Math.floor(days / 7);
-//         if (weeks < 4) {
-//             return `${weeks} week${weeks > 1 ? 's' : ''} ago`;
-//         }
-    
-//         const months = Math.floor(days / 30.44); // Average number of days in a month
-//         if (months < 12) {
-//             return `${months} month${months > 1 ? 's' : ''} ago`;
-//         }
-    
-//         // If over 11 months, display the date
-//         const options = { year: 'numeric', month: '2-digit', day: '2-digit' };
-//         return new Date(timestamp).toLocaleDateString('en-US', options);
-//     }

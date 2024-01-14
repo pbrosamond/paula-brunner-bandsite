@@ -36,7 +36,18 @@ function displayShows(show) { //Anonymous function syntax: const displayShows = 
     const dateParagraph = document.createElement("p");
     dateParagraph.classList.add("shows__text2");
     dateContainer.classList.add("shows__text2--bold");
-    dateParagraph.textContent = show.date;
+    dateParagraph.textContent = formatTimestamp(show.date)
+
+    // Function to format the timestamp
+    function formatTimestamp(date) {
+        const date2 = new Date(date);
+        const options = {
+            year: 'numeric',
+            month: '2-digit',
+            day: '2-digit',
+        };
+        return date2.toLocaleDateString('en-US', options);
+    }
 
     dateContainer.appendChild(dateHeading);
     dateContainer.appendChild(dateParagraph);
@@ -101,10 +112,3 @@ const renderShows = async () => {
 }
 
 renderShows()
-
-
-
-// Step 4 Use function to print comments on page load
-// showsArray.forEach((show) => {
-//     const showElement = displayShows(show);
-// });

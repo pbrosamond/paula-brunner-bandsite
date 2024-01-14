@@ -37,8 +37,7 @@ body {
 }
 @media (min-width: 768px) {
   .button {
-    width: -moz-fit-content;
-    width: fit-content;
+    width: 9.4321rem;
     align-self: flex-end;
   }
 }
