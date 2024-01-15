@@ -573,7 +573,7 @@ body {
 .shows__upcoming:hover {
   background-color: #FAFAFA;
 }
-.shows__upcoming:active {
+.shows__highlighted {
   background-color: #E1E1E1;
 }
 .shows__container2 {

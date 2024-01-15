@@ -97,8 +97,18 @@ function displayShows(show) { //Anonymous function syntax: const displayShows = 
 
     // Append all show elements to container element
     showsList.appendChild(showElement);
-}
 
+    //Show Highlight on Click
+    showElement.addEventListener('click', () => {
+        const activeShowElement = document.querySelectorAll('.shows__highlighted');
+
+        activeShowElement.forEach((show) => {
+            show.classList.remove('shows__highlighted');
+        })
+    
+        showElement.classList.add('shows__highlighted')
+      })
+}
 
 const renderShows = async () => {
     try {
@@ -113,3 +123,4 @@ const renderShows = async () => {
 }
 
 renderShows()
+
