@@ -105,8 +105,7 @@ function displayShows(show) { //Anonymous function syntax: const displayShows = 
         activeShowElement.forEach((show) => {
             show.classList.remove('shows__highlighted');
         })
-    
-        showElement.classList.add('shows__highlighted')
+
       })
 }
 
