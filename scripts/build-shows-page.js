@@ -42,9 +42,10 @@ function displayShows(show) { //Anonymous function syntax: const displayShows = 
     function formatTimestamp(date) {
         const date2 = new Date(date);
         const options = {
-            year: 'numeric',
-            month: '2-digit',
-            day: '2-digit',
+            weekday: "short",
+            month: "short",
+            day: "2-digit",
+            year: "numeric"
         };
         return date2.toLocaleDateString('en-US', options);
     }

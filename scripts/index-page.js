@@ -87,6 +87,7 @@ renderComments()
 const postComment = async () => {
     try {
         commentForm.addEventListener("submit", async (event) => {
+            console.log("hello2")
             event.preventDefault();
 
             const newComment = {
@@ -100,18 +101,18 @@ const postComment = async () => {
             // Retrieve updated comments after posting
             const commentsArray = await myData.getComments();
 
-            // Update the container and reset input values
-            event.target.name.value = "";
-            event.target.comment.value = "";
+            // Add the new comment to the beginning of the array
+            commentsArray.unshift(newComment); // Replaced by post call.
 
-            // event.reset();
+            // Update the container with the updated comments
+            container.textContent = "";
 
             renderComments();
 
             console.log(commentsArray);
         });
     } catch (error) {
-        console.error("Not Working Event Listener", error);
+        console.error("Error in postComment", error);
     }
 };
 

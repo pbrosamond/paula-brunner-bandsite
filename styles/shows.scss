@@ -111,6 +111,7 @@
     &__container,
     &__list {
         @include flexbox (column);
+        justify-content: center;
         width: 100%;
     }
 
@@ -128,6 +129,7 @@
         @include desktop {
             margin: 2.125rem 0 0 0;
             padding: 0 2rem;
+            margin-left: 10rem;
         }
         // End of Responsiveness
     }
@@ -173,6 +175,7 @@
         }
 
         @include desktop {
+            margin-left: 10rem;
         }
         // End of Responsiveness
 

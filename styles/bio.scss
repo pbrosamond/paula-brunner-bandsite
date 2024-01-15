@@ -310,21 +310,6 @@
 
     &__container {
         @include flexbox(column, $gap: 1rem);
-        padding: 1.5rem 1rem 1rem;
-
-        // Start of Responsiveness
-        @include tablet {
-            padding: 3rem 2rem 2.25rem;
-            gap: 2rem;
-        }
-
-        @include desktop {
-            max-width: 120rem;
-            margin: 0 auto;
-            padding-right: 8rem;
-            padding-left: 8rem;
-        }
-        // End of Responsiveness
     }
 
     &__output {

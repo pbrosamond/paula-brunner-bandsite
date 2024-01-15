@@ -37,7 +37,7 @@ body {
 }
 @media (min-width: 768px) {
   .button {
-    width: 9.4321rem;
+    max-width: 9.4325rem;
     align-self: flex-end;
   }
 }
@@ -498,6 +498,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 0;
+  justify-content: center;
   width: 100%;
 }
 .shows__subtitles {
@@ -518,6 +519,7 @@ body {
   .shows__subtitles {
     margin: 2.125rem 0 0 0;
     padding: 0 2rem;
+    margin-left: 10rem;
   }
 }
 .shows__text {
@@ -561,6 +563,11 @@ body {
     gap: 1rem;
     padding: 2.25rem 2rem 2.25rem;
     gap: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__upcoming {
+    margin-left: 10rem;
   }
 }
 .shows__upcoming:hover {
